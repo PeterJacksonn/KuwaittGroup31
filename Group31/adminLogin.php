@@ -18,6 +18,8 @@ if (isset($_POST['submit'])) {
         
         if ($array_user != null) {
 
+		
+		
 
             if ($array_user[0]['role'] == "Staff") {
                 if ($array_user[0]['status'] == "Active") {
