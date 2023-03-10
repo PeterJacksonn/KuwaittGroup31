@@ -2,7 +2,7 @@
 
 
 function getDocument (){
-    $db = new SQLITE3('C:\\Users\\Public\\data\\Kuwaitt.db');
+    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
     $sql = "SELECT * FROM documents";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();
@@ -42,7 +42,6 @@ $document = getDocument();
                         <td><?php echo $document[$i]['criticality']?></td>
                         <td><?php echo $document[$i]['viewers']?></td>
                         <td><a href="updateUser.php?uid=<?php echo $document[$i]['userId']; ?>">View</a></td>
-
                     </tr>
                     <?php endfor;?>
                 </table>    
