@@ -1,7 +1,7 @@
 <?php
 
 function getUsers (){
-    $db = new SQLITE3('C:\\Users\\Public\\data\\Kuwaitt.db');
+    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
     $sql = "SELECT * FROM bankUser";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();
