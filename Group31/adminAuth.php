@@ -5,7 +5,7 @@ function verifyStaff () {
             return;  // <-- return null;  
         }
 
-        $db = new SQLite3('C:\\Users\\Public\\data\\Kuwaitt.db');
+        $db = new SQLite3('..\\Database\\Kuwaitt.db');
         $stmt = $db->prepare('SELECT id, password, fname FROM Admin WHERE id=:id AND password=:password');
         $stmt->bindParam(':id', $_POST['id'], SQLITE3_TEXT);
         $stmt->bindParam(':password', $_POST['password'], SQLITE3_TEXT);
