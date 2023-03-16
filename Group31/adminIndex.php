@@ -26,7 +26,8 @@ checkSession ($path); //calling the function from session.php
     <title>Document</title>
 </head>
 <body>
-    <h1>Admin Home Page</h1>
+    <h1><u>Admin Home Page</u></h1>
+    
     <h2>Hello, <?php echo $name?>
 </body>
 </html>
