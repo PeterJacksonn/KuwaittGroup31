@@ -14,9 +14,7 @@ if (isset($_POST['submit'])) {
 
     if($_POST['email'] != null && $_POST["password"] !=null)
     {
-
         $array_user = verifyUser(); 
-
         if ($array_user != null) {
             
             session_start();
@@ -36,7 +34,6 @@ if (isset($_POST['submit'])) {
     
 
 ?>
-
 
 <div class="container">
         <main role="main" class="pb-3">

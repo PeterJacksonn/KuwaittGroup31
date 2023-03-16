@@ -1,4 +1,3 @@
-
 <?php
 require("adminNav.php");?>
 
@@ -102,6 +101,5 @@ if (isset($_POST['delete'])){ //if statement which is entered into when the user
             </main>
 
 </div>
-
 
 <?php require("footer.php"); ?>
