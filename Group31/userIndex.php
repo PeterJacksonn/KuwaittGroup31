@@ -1,5 +1,4 @@
 <?php
-require("navBar.php");
 include("session.php");
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
 
@@ -31,4 +30,3 @@ checkSession ($path); //calling the function from session.php
 </body>
 </html>
 
-<?php require("footer.php"); ?>
