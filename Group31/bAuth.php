@@ -1,5 +1,5 @@
 <?php 
-function verifyUser () {
+function verifyStaff () {
 
         if (!isset($_POST['email']) or !isset($_POST['password'])) {
             return;  // <-- return null;  

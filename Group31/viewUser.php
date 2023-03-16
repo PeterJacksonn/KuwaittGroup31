@@ -1,5 +1,4 @@
-<?php 
-require("adminNav.php");
+<?php require("adminNav.php");
 include_once("viewUserSQL.php");
 
 $user = getUsers();

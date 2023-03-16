@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
     if($_POST['email'] != null && $_POST["password"] !=null)
     {
-        $array_user = verifyUser(); 
+        $array_user = verifyStaff(); 
         if ($array_user != null) {
             
             session_start();
@@ -35,6 +35,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
+<body style="background-image: url('equipmentPicture.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 <div class="container">
         <main role="main" class="pb-3">
             <div class="center bgColor">

@@ -1,6 +1,9 @@
 <?php
 require("navBar.php");
 
+if ($_GET['debug'] == true){
+    require("debug.php");
+}
 ?>
 
 
