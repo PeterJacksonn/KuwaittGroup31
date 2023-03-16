@@ -1,5 +1,7 @@
 <?php
-require("adminNav.php");
+
+require('UserNav.php');
+
 include("session.php");
 
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
