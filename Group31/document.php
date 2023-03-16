@@ -41,10 +41,10 @@ $document = getDocument();
                         <td><?php echo $document[$i]['owner']?></td>
                         <td><?php echo $document[$i]['criticality']?></td>
                         <td><?php echo $document[$i]['viewers']?></td>
-                        <td><a href="updateUser.php?uid=<?php echo $document[$i]['userId']; ?>">View</a></td>
+                        <td><a href="viewdoc.php?uid=<?php echo $document[$i]['userId']; ?>">View</a></td>
                     </tr>
                     <?php endfor;?>
-                </table>    
+                </table>
             </div>
         </div>
 
