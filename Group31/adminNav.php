@@ -28,11 +28,11 @@
 							<a class="nav-link text-dark" href="viewUser.php">View Bank User</a>
 						<li class="nav-item">
 							<a class="nav-link text-dark" href="document.php">View Document</a>
-						<li class="nav-item">
-							<a class="nav-link text-dark" href="logout.php">Logout</a>
-						</li>
+
 					</ul>
 				</div>
+				<a class="nav-link text-dark" href="logout.php">Logout</a>
+
 			</div>
 		</div>
 		</nav>

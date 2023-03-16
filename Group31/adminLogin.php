@@ -35,7 +35,6 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<body style="background-image: url('equipmentPicture.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
 <div class="container">
         <main role="main" class="pb-3">
             <div class="center bgColor">

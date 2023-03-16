@@ -41,7 +41,9 @@ $document = getDocument();
                         <td><?php echo $document[$i]['owner']?></td>
                         <td><?php echo $document[$i]['criticality']?></td>
                         <td><?php echo $document[$i]['viewers']?></td>
-                        <td><a href="viewdoc.php?uid=<?php echo $document[$i]['userId']; ?>" class="btn btn-info">View</a></td>
+
+                        <td><a href="viewdoc.php?uid=<?php echo $document[$i]['owner']; ?>">View</a></td>
+
                     </tr>
                     <?php endfor;?>
                 </table>
