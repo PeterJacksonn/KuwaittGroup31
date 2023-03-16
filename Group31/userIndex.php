@@ -1,6 +1,5 @@
 <?php
-
-require("adminNav.php");
+require('UserNav.php');
 include("session.php");
 
 
