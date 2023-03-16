@@ -1,6 +1,6 @@
 
 <?php
-require("navBar.php");
+require("adminNav.php");
 
 ?>
 
