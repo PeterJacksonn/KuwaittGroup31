@@ -27,7 +27,7 @@
 						<li class="nav-item">
 							<a class="nav-link text-dark" href="adminLogin.php"><!--something--></a>
 							<li class="nav-item">
-							<a class="nav-link text-dark" href="bUserLogin.php"><!--something--></a>
+							<a class="nav-link text-dark" href="logout.php">Logout</a>
 						</li>
 					</ul>
 				</div>
