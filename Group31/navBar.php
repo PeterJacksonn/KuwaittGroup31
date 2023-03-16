@@ -26,6 +26,8 @@
 					<ul class="navbar-nav flex-grow-1">
 						<li class="nav-item">
 							<a class="nav-link text-dark" href="adminLogin.php">Staff Login</a>
+							<li class="nav-item">
+							<a class="nav-link text-dark" href="bUserLogin.php">User Login</a>
 						</li>
 					</ul>
 				</div>
