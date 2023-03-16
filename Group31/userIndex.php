@@ -1,4 +1,5 @@
 <?php
+require("navBar.php");
 include("session.php");
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
 
@@ -26,6 +27,8 @@ checkSession ($path); //calling the function from session.php
 </head>
 <body>
     <h1>User Landing Page</h1>
-    <h2>HEllo <?php echo $name?></h2>
+    <h2>Hello <?php echo $name?></h2>
 </body>
 </html>
+
+<?php require("footer.php"); ?>
