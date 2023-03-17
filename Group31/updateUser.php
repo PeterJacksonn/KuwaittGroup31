@@ -5,7 +5,7 @@ include_once("viewUserSQL.php");
 if (isset($_POST['submit'])){
 
     $db = new SQLite3('..\\Database\\Kuwaitt.db');
-    $sql = "UPDATE bankUser SET fname = :fname, lname = :lname, email = :email, password = :pwd WHERE id = :ids"; //remove s from (id = :ids to update user correctly)
+    $sql = "UPDATE credentials SET fname = :fname, lname = :lname, email = :email, password = :pwd WHERE id = :ids"; //remove s from (id = :ids to update user correctly)
     $stmt = $db->prepare($sql);
   
     $stmt->bindParam(':fname',$_POST['fname'], SQLITE3_TEXT);
