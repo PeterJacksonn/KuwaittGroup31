@@ -19,10 +19,11 @@ if (isset($_POST['submit'])){
   {
     header('Location:viewUser.php');
   }
-  
+
+}
 
 $user = getUsers();
-  
+
 ?>
       <div class="bgColor">
               <main role="main" class="pb-3">
