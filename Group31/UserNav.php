@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,5 +33,4 @@
 			</div>
 		</nav>
 	</header>
-
 </body>
