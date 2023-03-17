@@ -2,7 +2,7 @@
 require("navBar.php");
 require("viewUserSQL.php");
 $pkvalue = $_GET['uid'];
-$tableName = 'bankUser';
+$tableName = 'credentials';
 $pk = 'id';
 $error = "";
 $success = "";
