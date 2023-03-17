@@ -27,9 +27,10 @@
 					<ul class="navbar-nav flex-grow-1">
 						<li class="nav-item">
 							<a class="nav-link text-dark" href="viewUser.php">View Bank User</a>
+						</li>
 						<li class="nav-item">
-							<a class="nav-link text-dark" href="document.php">View Document</a>
-
+							<a class="nav-link text-dark" href="adminDocument.php">View Document</a>
+						</li>
 					</ul>
 				</div>
 				<a class="nav-link text-dark" href="logout.php">Logout</a>
