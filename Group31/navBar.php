@@ -25,9 +25,7 @@
 				<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 					<ul class="navbar-nav flex-grow-1">
 						<li class="nav-item">
-							<a class="nav-link text-dark" href="adminLogin.php">Staff Login</a>
-							<li class="nav-item">
-							<a class="nav-link text-dark" href="bUserLogin.php">User Login</a>
+							<a class="nav-link text-dark" href="Login.php">Login</a>
 						</li>
 					</ul>
 				</div>
