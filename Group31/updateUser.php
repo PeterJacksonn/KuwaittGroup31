@@ -16,7 +16,7 @@ if (isset($_POST['submit'])){
   
   
     $stmt->execute();
-  
+  {
     header('Location:viewUser.php');
   }
   
@@ -65,4 +65,6 @@ $user = getUsers();
   
 
 
-<?php require("footer.php"); ?>
+<?php 
+require("footer.php");
+?>

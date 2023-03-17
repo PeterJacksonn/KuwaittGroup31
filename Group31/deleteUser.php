@@ -6,9 +6,9 @@ require("adminNav.php");?>
 
 <?php
 $db = new SQLite3('..\\Database\\Kuwaitt.db');
-$sql = "SELECT id, fname, lname, email, password, docID FROM bankUser WHERE id=:id";
+$sql = "SELECT id, fname, lname, email, password, role FROM credentials WHERE id=:id";
 $stmt = $db->prepare($sql);
-$stmt->bindParam(':id', $_GET['uid'], SQLITE3_TEXT); 
+$stmt->bindParam(':id', $_GET['id'], SQLITE3_TEXT); 
 $result= $stmt->execute();
 
 while($row=$result->fetchArray(SQLITE3_NUM)){ 
@@ -19,7 +19,7 @@ if (isset($_POST['delete'])){
 
     $db = new SQLite3('..\\Database\\Kuwaitt.db');
 
-    $stmt = "DELETE FROM bankUser WHERE id = :ids";//to make the code actually delete from db remove the
+    $stmt = "DELETE FROM credentials WHERE id = :ids";//to make the code actually delete from db remove the
     $sql = $db->prepare($stmt);                    //s at the end of (id = :ids)
     $sql->bindParam(':id', $_POST['id'], SQLITE3_TEXT);
 
@@ -91,7 +91,7 @@ if (isset($_POST['delete'])){
         <div class="row">
             <div class="col-5">
                 <form method="post">
-                     <input type="hidden" name="id" value = "<?php echo $_GET['uid'] ?>"><br>
+                     <input type="hidden" name="id" value = "<?php echo $_GET['id'] ?>"><br>
                     <input type="submit" value="Delete" class="btn btn-danger" name="delete"><a href="viewUser.php" style="font-weight: bold; padding-left: 30px;">Back</a>
                 </form>
             </div>
