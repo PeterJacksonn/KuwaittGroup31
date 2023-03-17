@@ -14,12 +14,19 @@ require("navBar.php");
     </style>
 </head>
 
-<div>
-    <h1 class="titlefont">Kuwait Document Management System </h1>
-    <img src="documentPic.png" class="image1">
-</div>
+<body>
+    <nav class="box1">
+        <div>
+            <img src="documentPic.png" class="image1">
+            <img src="piggyBank.png" class="image2">
+        </div>
+    </nav>
 
-
+    <div>
+        <h1 class="titlefont">Kuwait Document Management System</h1>
+        <h1 class="text1">Hello:</h1>
+    </div>
+</body>
 
 
 

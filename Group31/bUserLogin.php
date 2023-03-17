@@ -4,68 +4,75 @@ $passwordErr = $idErr = $invalidMesg = "";
 
 if (isset($_POST['submit'])) {
 
-    if ($_POST["password"]=="") {
+    if ($_POST["password"] == "") {
         $passwordErr = "Password is required";
-    } 
-      
-    if ($_POST["email"]==null) {
+    }
+
+    if ($_POST["email"] == null) {
         $idErr = "Email is required";
     }
 
-    if($_POST['email'] != null && $_POST["password"] !=null)
-    {
-        $array_user = verifyStaff(); 
+    if ($_POST['email'] != null && $_POST["password"] != null) {
+        $array_user = verifyStaff();
         if ($array_user != null) {
-            
+
             session_start();
-            $_SESSION['id']= $array_user[0]['id'];
+            $_SESSION['id'] = $array_user[0]['id'];
             $_SESSION['name'] = $array_user[0]['fname'];
-            
-            header("Location: userIndex.php"); 
+
+            header("Location: userIndex.php");
             exit();
-               
-        }
-        else{
+        } else {
             $invalidMesg = "Invalid email and password!";
         }
     }
 }
-        
-    
+
+
 
 ?>
 
-<body style="background-image: url('equipmentPicture.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
-<div class="container">
-        <main role="main" class="pb-3">
-            <div class="center bgColor">
+<head>
+    <style>
+        body {
+            background-image: url("whiteBkg.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="box2">
+        <div class="container">
+            <main role="main" class="pb-3">
+                <div>
                     <form method="post">
-                        <h1>Bank User Login</h1>
+                        <h1 style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white">Bank User Login</h1>
 
                         <div class="form-group logincenter">
-                                <label class="control-label labelFont">Email</label>
-                                <input class="form-control" type="text" name = "email">
-                                <span class="text-danger"><?php echo $idErr; ?></span>
+                            <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:-312px; top:65px">Email</label>
+                            <input class="form-control" type="text" name="email">
+                            <span class="text-danger"><?php echo $idErr; ?></span>
                         </div>
                         <div class="form-group logincenter">
-                                <label class="control-label labelFont">Password</label>
-                                <input class="form-control" type="text" name = "password">
-                                <span class="text-danger"><?php echo $passwordErr; ?></span>
+                            <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:-300px; top:65px">Password</label>
+                            <input class="form-control" type="password" name="password">
+                            <span class="text-danger"><?php echo $passwordErr; ?></span>
                         </div>
 
                         <input type="hidden"><span class="text-danger"><?php echo $invalidMesg; ?></span>
 
                         <div class="form-group col-md-4 logincenter">
-                            <input class="btn btn-primary" type="submit" value="Login" name ="submit">
+                            <input class="btn btn-light" type="submit" value="Login" name="submit">
+                            <a href="Index.php" class="btn btn-light">Cancel</a>
                         </div>
-                        <a href="Index.php">Cancel</a>
                     </form>
-            </div>
+                </div>
 
 
 
 
-	</main>
-</div>
+            </main>
+        </div>
+    </nav>
 </body>
-<?php require("footer.php");?>
+<?php require("footer.php"); ?>
