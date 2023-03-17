@@ -41,7 +41,7 @@ $document = getDocument();
                         <td><?php echo $document[$i]['owner']?></td>
                         <td><?php echo $document[$i]['criticality']?></td>
                         <td><?php echo $document[$i]['viewers']?></td>
-                        <td><a href="viewdoc.php?uid=<?php echo $document[$i]['owner']; ?>">View</a></td>
+                        <td><a href="UserViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>">View</a></td>
                     </tr>
                     <?php endfor;?>
                 </table>
@@ -75,7 +75,7 @@ $document = getDocument();
   </head>
   <body>
     <h1>PDF Example with iframe</h1>
-    <iframe src="1.pdf#toolbar=0" width="100%" height="500px">
+    <iframe src="userDocuments\\1.pdf#toolbar=0" width="100%" height="500px">
     </iframe>
   </body>
 </html>
