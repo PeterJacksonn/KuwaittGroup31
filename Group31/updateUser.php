@@ -1,6 +1,7 @@
 <?php
 require("adminNav.php");
 
+
     $db = new SQLite3('..\\Database\\Kuwaitt.db');
     $sql = "UPDATE credentials SET fname = :fname, lname = :lname, email = :email, password = :pwd WHERE id = :ids"; //remove s from (id = :ids to update user correctly)
     $stmt = $db->prepare($sql);

@@ -41,9 +41,11 @@ $user = getUsers();
                         <td><?php echo $user[$i]['lname']?></td>
                         <td><?php echo $user[$i]['email']?></td>
                         <td><?php echo $user[$i]['password']?></td>
+
                         <td><?php echo $user[$i]['role']?></td>
                         <td><a href="updateUser.php?id=<?php echo $user[$i]['id']; ?>" class="btn btn-info">Update</a></td>
                         <td><a href="deleteUser.php?id=<?php echo $user[$i]['id']; ?>" class="btn btn-danger">Delete</a></td>
+
                     </tr>
                     <?php endfor;?>
                 </table>    
