@@ -11,11 +11,11 @@ $stmt = $db->prepare($sql);
 $stmt->bindParam(':id', $_GET['uid'], SQLITE3_TEXT); 
 $result= $stmt->execute();
 
-while($row=$result->fetchArray(SQLITE3_NUM)){ //uses php to use iteration to display the query result
+while($row=$result->fetchArray(SQLITE3_NUM)){ 
     $arrayResult [] = $row; 
 }
 
-if (isset($_POST['delete'])){ //if statement which is entered into when the user clicks on delete
+if (isset($_POST['delete'])){ 
 
     $db = new SQLite3('..\\Database\\Kuwaitt.db');
 

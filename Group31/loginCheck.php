@@ -1,4 +1,4 @@
-<?php 
+<?php
 function verifyUser () {
 
         if (!isset($_POST['email']) or !isset($_POST['password'])) {
