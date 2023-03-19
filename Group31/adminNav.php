@@ -27,10 +27,10 @@
 				<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 					<ul class="navbar-nav flex-grow-1">
 						<li class="nav-item">
-							<a class="nav-link text-light" href="viewUser.php">View Bank User</a>
+							<a class="nav-link text-light" href="viewUser.php">View Bank Users</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-light" href="adminDocument.php">View Document</a>
+							<a class="nav-link text-light" href="adminDocument.php">View Documents</a>
 						</li>
 					</ul>
 				</div>

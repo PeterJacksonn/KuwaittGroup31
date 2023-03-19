@@ -28,11 +28,23 @@ checkSession($path); //calling the function from session.php
 </head>
 
 <body>
-    <h1><u>Admin Home Page</u></h1>
+    <h1 class="adminfont"><u>Admin Home Page</u></h1>
 
-    <h2>Hello, <?php echo $name ?></h2>
+    <h2 class="greetingUser">Hello, <?php echo $name ?></h2>
+
+    <nav class="box3">
+        <h2><u>My Documents</u></h2>
+
+        <ul>
+            <li><a href="">My Documents</a></li>
+            <li><a href="">Scan / Upload File</a></li>
+        </ul>
+    </nav>
 </body>
 
 </html>
+
+
+
 
 <?php require("footer.php"); ?>
