@@ -28,16 +28,18 @@ checkSession($path); //calling the function from session.php
 </head>
 
 <body>
-    <h1 class="adminfont"><u>Admin Home Page</u></h1>
+    <h1 class="pagefont"><u>Admin Home Page</u></h1>
 
     <h2 class="greetingUser">Hello, <?php echo $name ?></h2>
 
     <nav class="box3">
-        <h2><u>My Documents</u></h2>
+        <h2 class="documentfont">My Documents</h2>
 
         <ul>
-            <li><a href="">My Documents</a></li>
-            <li><a href="">Scan / Upload File</a></li>
+            <li><a class="sideBarfont" href=""><b>My Documents</b></a></li>
+            <li><a class="sideBarfont" href=""><b>Scan / Upload File</b></a></li>
+            <li><a class="sideBarfont" href=""><b>Archived Files</b></a></li>
+            <li><a class="sideBarfont" href=""><b>Deleted Files</b></a></li>
         </ul>
     </nav>
 </body>

@@ -32,6 +32,9 @@
 						<li class="nav-item">
 							<a class="nav-link text-light" href="adminDocument.php">View Documents</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link text-light" href="">Add New User</a>
+						</li>
 					</ul>
 				</div>
 				<a class="nav-link text-light" href="logout.php">Logout</a>
