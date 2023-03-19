@@ -88,8 +88,8 @@ html {
     width: 750px;
     border-radius: 10px;
     padding: 10px;
-    position: absolute;
-    left: 575px;
+    position: fixed;
+    left: 550px;
 }
 
 input[name="id"],
