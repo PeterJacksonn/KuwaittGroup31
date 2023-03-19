@@ -68,6 +68,12 @@ html {
     border-radius: 10px;
 }
 
+.image3 {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px
+}
+
 .box1 {
     background-color: #1ab05c;
     height: 650px;
