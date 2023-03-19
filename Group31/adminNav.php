@@ -38,8 +38,6 @@
 					</ul>
 				</div>
 				<a class="nav-link text-light" href="logout.php">Logout</a>
-			</div>
-			</div>
 		</nav>
 	</header>
 </body>
