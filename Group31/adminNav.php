@@ -19,7 +19,7 @@
 	<header>
 		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color:#128754">
 			<div class="container-fluid">
-				<<<<<<< HEAD <a class="navbar-brand" href="adminIndex.php">Home</a>
+				<<<<<<< HEAD <<<<<<< HEAD <a class="navbar-brand" href="adminIndex.php">Home</a>
 					=======
 					<a href="adminIndex.php"><img src="homeIcon.png" class="image3"></a>
 					<a class="navbar-brand" style="color: #fff" href="adminIndex.php">Home</a>
@@ -38,9 +38,28 @@
 						</ul>
 					</div>
 					<a class="nav-link text-light" href="logout.php">Logout</a>
+					=======
+					<a href="adminIndex.php"><img src="homeIcon.png" class="image3"></a>
+					<a class="navbar-brand" style="color: #fff" href="adminIndex.php">Home</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+						<ul class="navbar-nav flex-grow-1">
+							<li class="nav-item">
+								<a class="nav-link text-light" href="viewUser.php">View Bank Users</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-light" href="adminDocument.php">View Documents</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link text-light" href="">Add New User</a>
+							</li>
+						</ul>
+					</div>
+					<a class="nav-link text-light" href="logout.php">Logout</a>
+					>>>>>>> charlotte--main-with-updated-ui
 			</div>
-			</div>
-			<<<<<<< HEAD=======>>>>>>> charlotte--main-with-updated-ui
 		</nav>
 	</header>
 </body>
