@@ -178,24 +178,24 @@ input[type="password"]:focus {
 
 .pagefont {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 45px;
+    font-size: 280%;
     letter-spacing: 2px;
     white-space: nowrap;
     color: #128754;
     position: absolute;
-    top: 60px;
-    padding-left: 40px;
+    top: 7%;
+    padding-left: 2%;
 }
 
 .greetingUser {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 35px;
+    font-size: 230%;
     letter-spacing: 2px;
     white-space: nowrap;
     color: #1ab05c;
     position: absolute;
-    top: 120px;
-    padding-left: 45px;
+    top: 13%;
+    padding-left: 2.5%;
 }
 
 .documentfont {
