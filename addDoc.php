@@ -1,4 +1,5 @@
 <?php require("adminNav.php"); 
+include_once("docSQL.php");
 include("session.php");
 
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
@@ -19,8 +20,9 @@ checkSession ($path); //calling the function from session.php
 $message = "";
 
 if(isset($_POST["submit"])) {
-          
+    documentSQL();
     $doc = $_POST['doc'];
+    $criticality = $_POST['criticality'];
     $target_dir = "userDocuments\\"; //to specify the directory 
     $target_file = $target_dir.basename($_FILES["file"]["name"]); //fileToUpload - is from the form -input name
     $uploadOk = 1;
@@ -66,7 +68,7 @@ if(isset($_POST["submit"])) {
                 <div class="form-group">
                 <input type="text" class="form-control" name="doc"
                  placeholder="Document name..." required>
-                 <select name="role" class="form-control">
+                 <select name="criticality" class="form-control">
                             <option value="high">High</option>
                             <option value="medium">Medium</option>
                             <option value="low">Low</option>
