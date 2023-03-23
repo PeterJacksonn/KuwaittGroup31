@@ -1,7 +1,7 @@
 <?php
-require("navBar.php");
+require("adminNav.php");
 require("viewUserSQL.php");
-$pkvalue = $_GET['uid'];
+$pkvalue = $_GET['id'];
 $tableName = 'credentials';
 $pk = 'id';
 $error = "";
@@ -33,12 +33,12 @@ if(isset($_POST['submit'])){
 
 ?>
 
-<h1><u>Update user page:  ID <?php echo $pkvalue; ?></u></h1>
+<h1><u>Update user for ID: <?php echo $pkvalue; ?></u></h1>
 
 
 
         <div class="row">
-            <div class="col-10">
+            <div class="col-12">
                 <table class="table table-striped">
                     <thead class="table-dark">
                         <?php for($i=0;$i<$noOfColumns;$i++):?>
