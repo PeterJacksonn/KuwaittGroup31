@@ -121,8 +121,8 @@ li a:hover {
 
 .box1 {
     background-color: #1ab05c;
-    height: 650px;
-    width: 750px;
+    height: 73%;
+    width: 45.5%;
     border-radius: 10px;
     padding: 10px;
     position: absolute;
@@ -135,12 +135,12 @@ li a:hover {
 
 .box2 {
     background-color: #1ab05c;
-    height: 500px;
-    width: 750px;
+    height: 50%;
+    width: 50%;
     border-radius: 10px;
     padding: 10px;
     position: fixed;
-    left: 475px;
+    left: 25%;
     background: rgba(26, 176, 92);
     outline: solid 5px #128754;
 }
