@@ -141,8 +141,8 @@ li a:hover {
     padding: 10px;
     position: fixed;
     left: 25%;
-    background: rgba(26, 176, 92);
     outline: solid 5px #128754;
+    background: rgba(26, 176, 92, .5);
 }
 
 input[name="id"],
@@ -161,6 +161,7 @@ input[name="email"] {
     transition: 0.25s;
     font-family: monospace;
     font-size: 20px;
+    border-radius: 15px;
 }
 
 input[type="text"]:focus,
@@ -168,6 +169,7 @@ input[type="password"]:focus {
     width: 510px;
     height: 60px;
     border: 6px solid #128754;
+    border-radius: 15px;
 }
 
 
@@ -341,7 +343,8 @@ th {
     color: white;
 }
 
-html, body {
+html,
+body {
     max-width: 100%;
     overflow-x: hidden;
 }
