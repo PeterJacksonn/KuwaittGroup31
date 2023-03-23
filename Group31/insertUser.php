@@ -1,27 +1,86 @@
 <?php
+require("adminNav.php");
+require("footer.php");
+require("viewUserSQL.php");
 
-function createUser(){
-
-    $created = false;//this variable is used to indicate the creation is successfull or not
-    $db = new SQLite3('..\\Database\\Kuwaitt.db'); // db connection - get your db file here. Its strongly advised to place your db file outside htdocs. 
-    $sql = 'INSERT INTO credentials(fname, lname, email, password, role) VALUES (:fname, :lname, :email, :password, :role)';
-    $stmt = $db->prepare($sql); //prepare the sql statement
-
-    //give the values for the parameters
-    $stmt->bindParam(':fname', $_POST['fname'], SQLITE3_TEXT); 
-    $stmt->bindParam(':lname', $_POST['lname'], SQLITE3_TEXT);
-    $stmt->bindParam(':email', $_POST['email'], SQLITE3_TEXT);
-    $stmt->bindParam(':password', $_POST['password'], SQLITE3_TEXT);
-    $stmt->bindParam(':role', $_POST['role'], SQLITE3_TEXT);
+$tablename = "credentials";
+$data = array();
 
 
-    //execute the sql statement
-    $stmt->execute();
+if(isset($_POST['submit'])){
+    
 
-    //the logic
-    if($stmt){
-        $created = true;
+    for($i=0;$i<TableColumns($tablename);$i++){
+        array_push($data,$_POST[TableNames($tablename,$i)]);
+        
     }
-
-    return $created;
+    InsertData($tablename,$data);
 }
+
+
+?>
+<style>
+    .formelement {    
+        background: rgb(255, 255, 255);
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 4px solid #128754;
+        padding: 14px 10px;
+        height: 50px;
+        width: 500px;
+        outline: none;
+        color: #000000;
+        transition: 0.25s;
+        font-family: monospace;
+        font-size: 20px;
+        }
+</style>
+
+<div class="container bgColor">
+    <main role="main" class="pb-3">
+    <h1> CREATE NEW USER: </h1>
+
+        <form method = "post">
+
+        <?php
+            for($i = 0;$i<(TableColumns($tablename)+1);$i++):
+
+                $columnname = TableNames($tablename,$i);
+                if($columnname == "role"){
+                    echo "
+                    <div>
+                    ".$columnname.":
+                    <select  name='".$columnname."'>
+                    <option value='admin'>admin</option>
+                    <option value='manager'>manager</option>
+                    <option value='active'>active</option>
+                    <option value='staff'>staff</option>
+                    </div>";
+                }
+                elseif($i==TableColumns($tablename)){
+                    echo "
+            
+                    <div>
+                    <input type='submit' name='submit'>
+                    </div>
+                    ";
+                }
+                else{
+                    echo "
+                    <div>
+                    ".$columnname.":
+                    <input class='formelement' type='text' name='".$columnname."'>
+                    </div>
+                    ";
+                }
+
+            endfor;
+            
+        ?>
+
+        </form>
+
+        <?php //echo var_dump($data);  //debug    ?> 
+    </main>
+</div>
