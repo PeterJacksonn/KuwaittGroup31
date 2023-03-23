@@ -46,7 +46,7 @@ $user = getUsers();
                         <td class="tbContents"><?php echo $user[$i]['password']?></td>
 
                         <td class="tbContents"><?php echo $user[$i]['role']?></td>
-                        <td style="text-align: center;"><a href="updateUser.php?id=<?php echo $user[$i]['id']; ?>" class="btn btn-action">Update</a>
+                        <td style="text-align: center;"><a href="updateUser.php?uid=<?php echo $user[$i]['id']; ?>" class="btn btn-action">Update</a>
                         <a href="deleteUser.php?id=<?php echo $user[$i]['id']; ?>" class="btn btn-negative">Delete</a></td>
 
                     </tr>
