@@ -8,12 +8,11 @@ include("getOS.php");?>
 
 <?php
 $os = getOS();
-if($os === "Mac")
-{
-  $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy/Database/Kuwaitt.db');
+if($os === "Mac"){
+    $db = new SQLITE3('/Database/Kuwaitt.db');
 }
 else{
-  $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
 }
 $sql = "SELECT id, fname, lname, email, password, role FROM credentials WHERE id=:id";
 $stmt = $db->prepare($sql);
@@ -27,12 +26,11 @@ while($row=$result->fetchArray(SQLITE3_NUM)){ //uses php to use iteration to dis
 if (isset($_POST['delete'])){ //if statement which is entered into when the user clicks on delete
 
     $os = getOS();
-    if($os === "Mac")
-    {
-      $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy/Database/Kuwaitt.db');
+    if($os === "Mac"){
+        $db = new SQLITE3('/Database/Kuwaitt.db');
     }
     else{
-      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
     }
 
     $stmt = "DELETE FROM credentials WHERE id = :ids";//to make the code actually delete from db remove the

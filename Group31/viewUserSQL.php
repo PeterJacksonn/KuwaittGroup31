@@ -3,12 +3,11 @@ include("getOS.php");
 
 function getUsers (){
     $os = getOS();
-    if($os === "Mac")
-    {
-      $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy/Database/Kuwaitt.db');
+    if($os === "Mac"){
+        $db = new SQLITE3('../Database/Kuwaitt.db');
     }
     else{
-      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
     }
     $sql = "SELECT * FROM credentials";
     $stmt = $db->prepare($sql);
@@ -23,12 +22,11 @@ function getUsers (){
 
 function UpdateDb($table,$column,$value,$pk,$pkvalue){
     $os = getOS();
-    if($os === "Mac")
-    {
-      $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy/Database/Kuwaitt.db');
+    if($os === "Mac"){
+        $db = new SQLITE3('../Database/Kuwaitt.db');
     }
     else{
-      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
     }
     $sql = 'UPDATE '.$table.' SET '.$column.' = :value WHERE '.$pk.' = :pkvalue';
     $stmt = $db->prepare($sql);
@@ -43,12 +41,11 @@ function UpdateDb($table,$column,$value,$pk,$pkvalue){
 
 function TableNames($table,$index){
     $os = getOS();
-    if($os === "Mac")
-    {
-      $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy/Database/Kuwaitt.db');
+    if($os === "Mac"){
+        $db = new SQLITE3('../Database/Kuwaitt.db');
     }
     else{
-      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
     }
     $sql = "SELECT * FROM ".$table;
     $stmt = $db->prepare($sql);
@@ -63,12 +60,11 @@ function TableNames($table,$index){
 function TableColumns($table){
 
     $os = getOS();
-    if($os === "Mac")
-    {
-      $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy/Database/Kuwaitt.db');
+    if($os === "Mac"){
+        $db = new SQLITE3('../Database/Kuwaitt.db');
     }
     else{
-      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
     }
     $sql = "SELECT * FROM ".$table;
     $stmt = $db->prepare($sql);

@@ -6,9 +6,8 @@ function verifyUser () {
             return;  // <-- return null;  
         }
         $os = getOS();
-        if($os === "Mac")
-        {
-            $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy/Database/Kuwaitt.db');
+        if($os === "Mac"){
+            $db = new SQLITE3('../Database/Kuwaitt.db');
         }
         else{
             $db = new SQLITE3('..\\Database\\Kuwaitt.db');
