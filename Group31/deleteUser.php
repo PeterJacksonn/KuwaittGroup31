@@ -19,8 +19,8 @@ if (isset($_POST['delete'])){ //if statement which is entered into when the user
 
     $db = new SQLite3('..\\Database\\Kuwaitt.db');
 
-    $stmt = "DELETE FROM credentials WHERE id = :ids";//to make the code actually delete from db remove the
-    $sql = $db->prepare($stmt);                    //s at the end of (id = :ids)
+    $stmt = "DELETE FROM credentials WHERE id = :id";
+    $sql = $db->prepare($stmt);                    
     $sql->bindParam(':id', $_POST['id'], SQLITE3_TEXT);
 
     $sql->execute();
@@ -96,10 +96,7 @@ if (isset($_POST['delete'])){ //if statement which is entered into when the user
                 </form>
             </div>
         </div>
-
-            
-            </main>
-
+    </main>
 </div>
 
 <?php require("footer.php"); ?>
