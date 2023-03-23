@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
         }
         else{
             //echo "sql statement successful?? if nothing changed f"; // debug: used this cos the statement was successful but nothing changed
-            $path = "updateUser.php?uid=".$pkvalue;
+            $path = "viewUser.php?uid=".$pkvalue;
             header("Location:".$path);
         }
     }
