@@ -1,8 +1,6 @@
 <?php require("adminNav.php");
 include("getOS.php");
 
-
-
 function getDocument (){
     $os = getOS();
     if($os === "Mac")
@@ -31,11 +29,11 @@ $document = getDocument();
 </div>
 
 <div class="container bgColor">
-        <main role="main" class="pb-3">
+    <main role="main" class="pb-3">
           <h5>View all information about each document, or select a document to view.</h5>
         
-                <div class="row">
-                <div class="col">
+            <div class="row">
+              <div class="col">
                 <table class="table table-hover">
                     <thead class="theadColour">
                         <td style="text-align: center;">Document ID</td>
@@ -59,9 +57,7 @@ $document = getDocument();
                 </table>
             </div>
         </div>
-
-
-        </main>
+    </main>
 </div>
 
 
