@@ -96,10 +96,7 @@ if (isset($_POST['delete'])){ //if statement which is entered into when the user
                 </form>
             </div>
         </div>
-
-            
-            </main>
-
+    </main>
 </div>
 
 <?php require("footer.php"); ?>
