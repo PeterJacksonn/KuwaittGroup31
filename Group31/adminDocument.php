@@ -1,8 +1,17 @@
 <?php require("adminNav.php");
+include("getOS.php");
+
 
 
 function getDocument (){
-    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    $os = getOS();
+    if($os === "Mac")
+    {
+      $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy/Database/Kuwaitt.db');
+    }
+    else{
+      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
     $sql = "SELECT * FROM documents";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();
@@ -17,31 +26,34 @@ function getDocument (){
 $document = getDocument();
 ?>
 
+<div>
+  <h1 class="tableHeader"><u>View Documents</u></h1>
+</div>
 
 <div class="container bgColor">
         <main role="main" class="pb-3">
-                <h1>View Documents</h1>
+          <h5>View all information about each document, or select a document to view.</h5>
         
                 <div class="row">
-                <div class="col-10">
-                <table class="table table-striped">
-                    <thead class="table-dark">
-                        <td>Document ID</td>
-                        <td>Document Owner</td>
-                        <td>Criticality</td>
-                        <td>Document Viewer</td>
-                        <td>View</td>
+                <div class="col">
+                <table class="table table-hover">
+                    <thead class="theadColour">
+                        <td style="text-align: center;">Document ID</td>
+                        <td style="text-align: center;">Document Owner</td>
+                        <td style="text-align: center;">Criticality</td>
+                        <td style="text-align: center;">Document Viewer</td>
+                        <td style="text-align: center;">View</td>
                     </thead>
 
                     <?php
                         for ($i=0; $i<count($document); $i++):
                     ?>
                     <tr>
-                        <td><?php echo $document[$i]['docID']?></td>
-                        <td><?php echo $document[$i]['owner']?></td>
-                        <td><?php echo $document[$i]['criticality']?></td>
-                        <td><?php echo $document[$i]['viewers']?></td>
-                        <td><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>">View</a></td>
+                        <td class="tbContents"><?php echo $document[$i]['docID']?></td>
+                        <td class="tbContents"><?php echo $document[$i]['owner']?></td>
+                        <td class="tbContents"><?php echo $document[$i]['criticality']?></td>
+                        <td class="tbContents"><?php echo $document[$i]['viewers']?></td>
+                        <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
                     </tr>
                     <?php endfor;?>
                 </table>
@@ -51,7 +63,6 @@ $document = getDocument();
 
         </main>
 </div>
-
 
 
 <!-- Button trigger modal -->

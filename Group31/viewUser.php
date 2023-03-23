@@ -14,37 +14,40 @@ $user = getUsers();
         <?php endif; ?>
 
 
+        <div>
+  <h1 class="tableHeader"><u>View Users</u></h1>
+</div>
+
 <div class="container bgColor">
         <main role="main" class="pb-3">
-                <h1>View Users</h1>
+            <h5>View all infomation about our users, update their data, or delete their records.</h5>
         
                 <div class="row">
-                <div class="col-10">
-                <table class="table table-striped">
-                    <thead class="table-dark">
-                        <td>User ID</td>
-                        <td>First Name</td>
-                        <td>Last Name</td>
-                        <td>Email</td>
-                        <td>Password</td>
-                        <td>Role</td>
-                        <td>Action</td>
-                        <td></td>
+                <div class="col">
+                <table class="table table-hover">
+                    <thead class="theadColour" >
+                        <td style="text-align: center;">User ID</td>
+                        <td style="text-align: center;">First Name</td>
+                        <td style="text-align: center;">Last Name</td>
+                        <td style="text-align: center;">Email</td>
+                        <td style="text-align: center;">Password</td>
+                        <td style="text-align: center;">Role</td>
+                        <td style="text-align: center;">Action</td>
                     </thead>
 
                     <?php
                         for ($i=0; $i<count($user); $i++):
                     ?>
                     <tr>
-                        <td><?php echo $user[$i]['id']?></td>
-                        <td><?php echo $user[$i]['fname']?></td>
-                        <td><?php echo $user[$i]['lname']?></td>
-                        <td><?php echo $user[$i]['email']?></td>
-                        <td><?php echo $user[$i]['password']?></td>
+                        <td class="tbContents"><?php echo $user[$i]['id']?></td>
+                        <td class="tbContents"><?php echo $user[$i]['fname']?></td>
+                        <td class="tbContents"><?php echo $user[$i]['lname']?></td>
+                        <td class="tbContents"><?php echo $user[$i]['email']?></td>
+                        <td class="tbContents"><?php echo $user[$i]['password']?></td>
 
-                        <td><?php echo $user[$i]['role']?></td>
-                        <td><a href="updateUser.php?id=<?php echo $user[$i]['id']; ?>" class="btn btn-info">Update</a></td>
-                        <td><a href="deleteUser.php?id=<?php echo $user[$i]['id']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td class="tbContents"><?php echo $user[$i]['role']?></td>
+                        <td style="text-align: center;"><a href="updateUser.php?id=<?php echo $user[$i]['id']; ?>" class="btn btn-action">Update</a>
+                        <a href="deleteUser.php?id=<?php echo $user[$i]['id']; ?>" class="btn btn-negative">Delete</a></td>
 
                     </tr>
                     <?php endfor;?>

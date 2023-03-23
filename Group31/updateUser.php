@@ -39,8 +39,8 @@ if(isset($_POST['submit'])){
 
         <div class="row">
             <div class="col-10">
-                <table class="table table-striped">
-                    <thead class="table-dark">
+                <table class="table table-hover">
+                    <thead class="theadColour">
                         <?php for($i=0;$i<$noOfColumns;$i++):?>
                         <td><?php $$i = TableNames($tableName,$i); echo $$i;?></td>
                         <?php endfor;?>
