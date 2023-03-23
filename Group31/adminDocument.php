@@ -1,5 +1,20 @@
 <?php require("adminNav.php");
+include("session.php");
 
+
+$path = "adminLogin.php";
+session_start(); //must start a session in order to use session in this page.
+if (!isset($_SESSION['id'])) {
+
+    session_unset();
+    session_destroy();
+    header("Location:" . $path); //return to the login page
+}
+$fname = $_SESSION['name'];
+$lname = $_SESSION['lname'];
+$name = $fname.' '.$lname; //this value is obtained from the login page when the user is verified
+
+checkSession($path); //calling the function from session.php
 
 function getDocument (){
     $db = new SQLITE3('..\\Database\\Kuwaitt.db');
@@ -15,6 +30,15 @@ function getDocument (){
 }
 
 $document = getDocument();
+
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -29,7 +53,7 @@ $document = getDocument();
                         <td>Document ID</td>
                         <td>Document Owner</td>
                         <td>Criticality</td>
-                        <td>Document Viewer</td>
+                        <td>Recently Viewed</td>
                         <td>View</td>
                     </thead>
 
@@ -53,39 +77,5 @@ $document = getDocument();
 </div>
 
 
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <!DOCTYPE html>
-<html>
-  <head>
-    <title>Title of the document</title>
-  </head>
-  <body>
-    <h1>PDF Example with iframe</h1>
-    <iframe src="1.pdf#toolbar=0" width="100%" height="500px">
-    </iframe>
-  </body>
-</html>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <?php require("Footer.php");?>

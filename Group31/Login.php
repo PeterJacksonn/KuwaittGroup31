@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
                 session_start();
                 $_SESSION['id'] = $array_user[0]['id'];
                 $_SESSION['name'] = $array_user[0]['fname'];
+                $_SESSION['lname'] = $array_user[0]['lname'];
                 header("Location: adminIndex.php");
                 exit();
             }
@@ -28,6 +29,7 @@ if (isset($_POST['submit'])) {
                 session_start();
                 $_SESSION['id'] = $array_user[0]['id'];
                 $_SESSION['name'] = $array_user[0]['fname'];
+                $_SESSION['lname'] = $array_user[0]['lname'];
                 header("Location: userIndex.php");
                 exit();
             }

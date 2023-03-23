@@ -49,7 +49,6 @@ li a {
 li a:hover {
     background-color: #1ab05c;
     color: #ffffff;
-    border-radius: 10px;
 }
 
 .titlefont {
@@ -122,8 +121,8 @@ li a:hover {
 
 .box1 {
     background-color: #1ab05c;
-    height: 73%;
-    width: 45.5%;
+    height: 650px;
+    width: 750px;
     border-radius: 10px;
     padding: 10px;
     position: absolute;
@@ -136,14 +135,14 @@ li a:hover {
 
 .box2 {
     background-color: #1ab05c;
-    height: 50%;
-    width: 50%;
+    height: 500px;
+    width: 750px;
     border-radius: 10px;
     padding: 10px;
     position: fixed;
-    left: 25%;
+    left: 475px;
+    background: rgba(26, 176, 92);
     outline: solid 5px #128754;
-    background: rgba(26, 176, 92, .5);
 }
 
 input[name="id"],
@@ -162,7 +161,6 @@ input[name="email"] {
     transition: 0.25s;
     font-family: monospace;
     font-size: 20px;
-    border-radius: 15px;
 }
 
 input[type="text"]:focus,
@@ -170,7 +168,6 @@ input[type="password"]:focus {
     width: 510px;
     height: 60px;
     border: 6px solid #128754;
-    border-radius: 15px;
 }
 
 
@@ -213,8 +210,8 @@ input[type="password"]:focus {
 }
 
 .box3 {
-    height: 70%;
-    width: 80%;
+    height: 630px;
+    width: 1400px;
     border-radius: 10px;
     padding: 10px;
     position: absolute;
@@ -344,8 +341,7 @@ th {
     color: white;
 }
 
-html,
-body {
+html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
