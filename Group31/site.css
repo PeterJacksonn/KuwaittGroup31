@@ -49,6 +49,7 @@ li a {
 li a:hover {
     background-color: #1ab05c;
     color: #ffffff;
+    border-radius: 10px;
 }
 
 .titlefont {
