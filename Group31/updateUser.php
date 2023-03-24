@@ -16,13 +16,14 @@ if(isset($_POST['submit'])){
     //$debugerror =  "debug1 ";
     if(isset($_POST['update'])){
         //$debugerror = "debug2 ";
+
         $success = UpdateDb($tableName,$_POST['column'],$_POST['update'],TableNames($tableName,0),$pkvalue);
         if($success == false){
             $error = "sql statement failed to execute";
         }
         else{
             //echo "sql statement successful?? if nothing changed f"; // debug: used this cos the statement was successful but nothing changed
-            $path = "viewUser.php?uid=".$pkvalue;
+            $path = "updateUser.php?id=".$pkvalue;
             header("Location:".$path);
         }
     }
@@ -32,6 +33,7 @@ if(isset($_POST['submit'])){
 }
 
 ?>
+
 
 <div>
   <h1 class="tableHeader"><u>Update user page:  ID <?php echo $pkvalue; ?></u></h1>
@@ -86,6 +88,7 @@ if(isset($_POST['submit'])){
             </div>
         </div>
     </main>
+
 </div>
 
 
