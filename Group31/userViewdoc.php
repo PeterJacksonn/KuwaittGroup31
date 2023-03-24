@@ -1,12 +1,20 @@
 <?php
 require("UserNav.php");
+include("getOS.php");
 
 
 if(isset($_GET['uid'])){
     appendViewed();
 }
 function appendViewed(){
-    $db = new SQLite3('..\\Database\\Kuwaitt.db');
+    
+    if($os === "Mac")
+    {
+      $db = new SQLITE3('../Database/Kuwaitt.db');
+    }
+    else{
+      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
     $sql = "UPDATE documents SET viewers=viewers||:viewer WHERE docID=:docID";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':viewer',$_SESSION['name'], SQLITE3_TEXT);
