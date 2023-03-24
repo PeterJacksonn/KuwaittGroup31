@@ -42,20 +42,20 @@ if (isset($_POST['submit'])) {
                     <div class="form-group col-md-7">
                         <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:1%; top:10%"><b>First Name</b></label>
                         <input class="form-control" type="text" name="fname" style="left: 30%; position: relative;">
-                        <span class="alert alert-danger position1"><?php echo $errorfname; ?></span>
+                        <span class="text-danger"><?php echo $errorfname; ?></span>
                     </div>
 
                     <div class="form-group col-md-7">
                         <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:1%; top:20%"><b>Last Name</b></label>
                         <input class="form-control" type="text" name="lname" style="left: 30%; position: relative;">
-                        <span class="alert alert-danger position1"><?php echo $errorlname; ?></span>
+                        <span class="text-danger"><?php echo $errorlname; ?></span>
                     </div>
 
 
                     <div class="form-group col-md-7">
                         <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:1%; top:40%"><b>Email</b></label>
                         <input class=" form-control" type="text" name="email" style="left: 30%; position: relative;">
-                        <span class="alert alert-danger position1"><?php echo $erroruid; ?></span>
+                        <span class="text-danger"><?php echo $erroruid; ?></span>
                     </div>
 
 
@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
                     <div class="form-group col-md-7">
                         <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:1%; top:60%"><b>Password</b></label>
                         <input class=" form-control" type="password" name="password" style="left: 30%; position: relative;">
-                        <span class="alert alert-danger position1"><?php echo $errorpwd; ?></span>
+                        <span class="text-danger"><?php echo $errorpwd; ?></span>
                         </select>
                     </div>
 
@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
                     </div>
                     <br>
                     <div class="form-group col-md-4">
-                        <input class="btn btn-light" type="submit" value="Create User" name="submit" style="left: 410%; position: relative;">
+                        <input class="btn btn-light" type="submit" value="Create User" name="submit" style="top:92%; left: 90%; position: absolute;">
                     </div>
                 </form>
             </div>
