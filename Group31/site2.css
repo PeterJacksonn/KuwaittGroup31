@@ -273,12 +273,6 @@ input[name="lname"]:focus {
     outline: solid 5px #1ab05c;
 }
 
-.position1 {
-    top: 10%;
-    left: 30%;
-    position: absolute;
-}
-
 @media (min-width: 768px) {
     html {
         font-size: 16px;
