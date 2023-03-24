@@ -1,7 +1,7 @@
 <?php
 require("adminNav.php");
 require("viewUserSQL.php");
-$pkvalue = $_GET['id'];
+$pkvalue = $_GET['uid'];
 $tableName = 'credentials';
 $pk = 'id';
 $error = "";
