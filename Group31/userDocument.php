@@ -1,8 +1,16 @@
 <?php require("UserNav.php");
+include("getOS.php");
 
 
 function getDocument (){
-    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    $os = getOS();
+    if($os === "Mac")
+    {
+      $db = new SQLITE3('/Applications/XAMPP/xamppfiles/htdocs/KuwaittGroup31copy../Database/Kuwaitt.db');
+    }
+    else{
+      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
     $sql = "SELECT * FROM documents";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();

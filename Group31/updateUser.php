@@ -1,7 +1,7 @@
 <?php
 require("adminNav.php");
 require("viewUserSQL.php");
-$pkvalue = $_GET['id'];
+$pkvalue = $_GET['uid'];
 $tableName = 'credentials';
 $pk = 'id';
 $error = "";
@@ -34,62 +34,61 @@ if(isset($_POST['submit'])){
 
 ?>
 
+
+<div>
+  <h1 class="tableHeader"><u>Update user page:  ID <?php echo $pkvalue; ?></u></h1>
+</div>
+
 <div class="container bgColor">
     <main role="main" class="pb-3">
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover">
+                    <thead class="theadColour">
+                        <?php for($i=0;$i<$noOfColumns;$i++):?>
+                        <td style="text-align: center;"><?php $$i = TableNames($tableName,$i); echo $$i;?></td>
+                        <?php endfor;?>
+                    </thead>
 
-        <h1><u>Update user page:  ID <?php echo $pkvalue; ?></u></h1>
+                    <?php
+                        for ($i=0; $i<count($table); $i++):
+                        if($table[0][$i]==$pkvalue):
+                    ?>
+                    <tr>
+                        <?php for($j=0;$j<$noOfColumns;$j++):?>
+                        <td class="tbContents"><?php echo $table[$i][$j]?></td>
 
-
-
-                <div class="row">
-                    <div class="col-10">
-                        <table class="table table-striped">
-                            <thead class="table-dark">
-                                <?php for($i=0;$i<$noOfColumns;$i++):?>
-                                <td><?php $$i = TableNames($tableName,$i); echo $$i;?></td>
-                                <?php endfor;?>
-                            </thead>
-
-                            <?php
-                                for ($i=0; $i<count($table); $i++):
-                                if($table[$i][0]==$pkvalue):
-                            ?>
-                            <tr>
-                                <?php for($j=0;$j<$noOfColumns;$j++):?>
-                                <td><?php echo $table[$i][$j]?></td>
-
-                                <?php endfor;?>
+                        <?php endfor;?>
 
 
-                            </tr>
+                    </tr>
 
-                            <?php endif;endfor;?>
-                        </table>    
-                    </div>
-                </div>
-
+                    <?php endif;endfor;?>
+                </table>    
                 <div>
-                <form method="post">
-                    <div>
-                        <select name="column">
-                            <?php for($i=0;$i<$noOfColumns;$i++):?>
-                            <option value = "<?php echo $$i ?>"><?php echo $$i; ?></option>
-                            <?php endfor;?>
-                        </select>
-                    </div>
-                    <div>
-                    
-                        <input type="text" name="update"></input>
-                    </div>
-                    <div>
-                        <input type="submit" name="submit"></input>
-                    </div>
-                    <input type="hidden" name = "uid" value = "<?php echo $pkvalue ?>"></input>
-                    <span class="text-danger"><?php echo $error; ?></span>
-                </form>
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="column">Update</label>
+                            </div>
+                            <select class="custom-select" id="column" name="column">
+                                <?php for($i=0;$i<$noOfColumns;$i++):?>
+                                    <option value = "<?php echo $$i ?>"><?php echo $$i; ?></option>
+                                <?php endfor;?>
+                            </select>
+                            <input type="text" class="form-control" name="update">
+                            <div class="input-group-append">
+                                <button class="btn btn-action" type="button" name="submit">Submit</button>
+                            </div>
+                            <input type="hidden" name = "uid" value = "<?php echo $pkvalue ?>"></input>
+                            <span class="text-danger"><?php echo $error; ?></span>
+                        </div>
+                    <form>
+                </div>
             </div>
+        </div>
+    </main>
 
-    </main>    
 </div>
 
 
