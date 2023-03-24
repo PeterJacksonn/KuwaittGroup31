@@ -24,15 +24,7 @@ function createUser(){
     $stmt = $db->prepare($sql); //prepare the sql statement
 }
 
-if(isset($_POST['submit'])){
-    
 
-    for($i=0;$i<TableColumns($tablename);$i++){
-        array_push($data,$_POST[TableNames($tablename,$i)]);
-        
-    }
-    InsertData($tablename,$data);
-}
 
 
 ?>
