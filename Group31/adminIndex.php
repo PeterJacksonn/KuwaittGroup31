@@ -47,6 +47,4 @@ checkSession($path); //calling the function from session.php
 </html>
 
 
-
-
 <?php require("footer.php"); ?>
