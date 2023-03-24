@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
 
                         <div class="form-group logincenter">
                             <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:-312px; top:65px">Email</label>
-                            <input class="form-control" type="text" name="email">
+                            <input class="form-control bar" type="text" name="email">
                             <span class="text-danger"><?php echo $idErr; ?></span>
                         </div>
                         <div class="form-group logincenter">
