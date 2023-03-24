@@ -61,12 +61,12 @@ if (isset($_POST['submit'])) {
                         <h1 style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white">Bank User Login</h1>
 
                         <div class="form-group logincenter">
-                            <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:-312px; top:65px">Email</label>
-                            <input class="form-control bar" type="text" name="email">
+                            <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:-312px; top:65px"><b>Email</b></label>
+                            <input class="form-control" type="text" name="email">
                             <span class="text-danger"><?php echo $idErr; ?></span>
                         </div>
                         <div class="form-group logincenter">
-                            <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:-300px; top:65px">Password</label>
+                            <label style="letter-spacing: 2px; font-family: 'Segou UI', Tahoma, Geneva, Verdana, sans-serif; color: white; position:relative; left:-300px; top:65px"><b>Password</b></label>
                             <input class="form-control" type="password" name="password">
                             <span class="text-danger"><?php echo $passwordErr; ?></span>
                         </div>

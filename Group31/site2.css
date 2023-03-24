@@ -147,7 +147,9 @@ li a:hover {
 }
 
 input[name="password"],
-input[name="email"] {
+input[name="email"],
+input[name="fname"],
+input[name="lname"] {
     background: rgb(255, 255, 255);
     display: block;
     margin: 20px auto;
@@ -165,9 +167,11 @@ input[name="email"] {
 }
 
 input[name="email"]:focus,
-input[name="password"]:focus {
-    width: 510px;
-    height: 60px;
+input[name="password"]:focus,
+input[name="fname"]:focus,
+input[name="lname"]:focus {
+    width: 150%;
+    height: 10%;
     border: 6px solid #128754;
     border-radius: 15px;
 }
@@ -181,7 +185,7 @@ input[name="password"]:focus {
     letter-spacing: 2px;
     white-space: nowrap;
     color: #128754;
-    position: absolute;
+    position: static;
     top: 7%;
     padding-left: 2%;
 }
@@ -193,7 +197,7 @@ input[name="password"]:focus {
     white-space: nowrap;
     color: #1ab05c;
     position: absolute;
-    top: 13%;
+    top: 14%;
     padding-left: 2.5%;
 }
 
@@ -221,6 +225,27 @@ input[name="password"]:focus {
     left: 10%;
     background: rgba(26, 176, 92, .5);
     outline: solid 5px #1ab05c;
+}
+
+
+/*create user*/
+
+.box4 {
+    height: 74%;
+    width: 80%;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    background: rgba(26, 176, 92, .5);
+    outline: solid 5px #1ab05c;
+}
+
+.position1 {
+    top: 10%;
+    left: 30%;
+    position: absolute;
 }
 
 @media (min-width: 768px) {
