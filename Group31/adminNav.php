@@ -35,9 +35,6 @@
 						<li class="nav-item">
 							<a class="nav-link text-light" href="createbUser.php">Add New User</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link text-light" href="addDoc.php">Add Document</a>
-						</li>
 					</ul>
 				</div>
 				<a class="nav-link text-light" href="logout.php">Logout</a>

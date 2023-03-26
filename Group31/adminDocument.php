@@ -12,19 +12,20 @@ if (!isset($_SESSION['id'])) {
 }
 $fname = $_SESSION['name'];
 $lname = $_SESSION['lname'];
-$name = $fname.' '.$lname; //this value is obtained from the login page when the user is verified
+$name = $fname . ' ' . $lname; //this value is obtained from the login page when the user is verified
 
 checkSession($path); //calling the function from session.php
 
-function getDocument (){
+function getDocument()
+{
     $db = new SQLITE3('..\\Database\\Kuwaitt.db');
     $sql = "SELECT * FROM documents";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();
-    
 
-    while ($row = $result->fetchArray()){ // use fetchArray(SQLITE3_NUM) - another approach
-        $arrayResult [] = $row; //adding a record until end of records
+
+    while ($row = $result->fetchArray()) { // use fetchArray(SQLITE3_NUM) - another approach
+        $arrayResult[] = $row; //adding a record until end of records
     }
     return $arrayResult;
 }
@@ -32,22 +33,15 @@ function getDocument (){
 $document = getDocument();
 
 
-
-
-
-
-
-
-
 ?>
 
 
 <div class="container bgColor">
-        <main role="main" class="pb-3">
-                <h1>View Documents</h1>
-        
-                <div class="row">
-                <div class="col-10">
+    <main role="main" class="pb-3">
+        <h1>View Documents</h1>
+
+        <div class="row">
+            <div class="col-10">
                 <table class="table table-striped">
                     <thead class="table-dark">
                         <td>Document ID</td>
@@ -58,24 +52,24 @@ $document = getDocument();
                     </thead>
 
                     <?php
-                        for ($i=0; $i<count($document); $i++):
+                    for ($i = 0; $i < count($document); $i++) :
                     ?>
-                    <tr>
-                        <td><?php echo $document[$i]['docID']?></td>
-                        <td><?php echo $document[$i]['owner']?></td>
-                        <td><?php echo $document[$i]['criticality']?></td>
-                        <td><?php echo $document[$i]['viewers']?></td>
-                        <td><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>">View</a></td>
-                    </tr>
-                    <?php endfor;?>
+                        <tr>
+                            <td><?php echo $document[$i]['docID'] ?></td>
+                            <td><?php echo $document[$i]['owner'] ?></td>
+                            <td><?php echo $document[$i]['criticality'] ?></td>
+                            <td><?php echo $document[$i]['viewers'] ?></td>
+                            <td><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>">View</a></td>
+                        </tr>
+                    <?php endfor; ?>
                 </table>
             </div>
         </div>
 
 
-        </main>
+    </main>
 </div>
 
 
 
-<?php require("Footer.php");?>
+<?php require("Footer.php"); ?>
