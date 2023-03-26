@@ -1,7 +1,5 @@
-<?php
-require('UserNav.php');
+<?php require("adminNav.php");
 include("session.php");
-
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
 
 session_start(); //must start a session in order to use session in this page.
@@ -18,6 +16,7 @@ $name = $_SESSION['name']; //this value is obtained from the login page when the
 
 checkSession($path); //calling the function from session.php
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

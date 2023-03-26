@@ -38,8 +38,6 @@ function getDocument()
 }
 
 $document = getDocument();
-
-
 ?>
 
 
