@@ -29,7 +29,16 @@ checkSession($path); //calling the function from session.php
 </head>
 
 <body>
-    <h1 class="pagefont"><u>Monthly Reports</u></h1>
+    <h1 class="pagefont"><u>Staff Reports</u></h1>
+
+    <nav class="box4">
+        <h2 class="documentfont">All Reports</h2>
+        <div class="column1">
+            <ul>
+                <li><a class="sideBarfont" href="userReports.php"><b>All Reports</b></a></li>
+                <li><a class="sideBarfont" href="userMonthlyReports.php"><b>Monthly Reports</b></a></li>
+        </div>
+    </nav>
 </body>
 
 <?php require("footer.php"); ?>

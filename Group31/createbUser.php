@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<h1 class="pagefont">Create User Form</h1>
+<h1 class="pagefont"><u>Create User Form</u></h1>
 
 <body>
     <nav class="box4">

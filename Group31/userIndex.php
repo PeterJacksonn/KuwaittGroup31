@@ -29,7 +29,7 @@ checkSession($path); //calling the function from session.php
 </head>
 
 <body>
-    <h1 class="pagefont"><u>User Home Page</u></h1>
+    <h1 class="pagefont"><u>Staff Home Page</u></h1>
 
     <h2 class="greetingUser">Hello <?php echo $name ?></h2>
     <nav class="box3">

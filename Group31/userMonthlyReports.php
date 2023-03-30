@@ -1,5 +1,7 @@
-<?php require("adminNav.php");
+<?php
+require('UserNav.php');
 include("session.php");
+
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
 
 session_start(); //must start a session in order to use session in this page.
@@ -16,7 +18,6 @@ $name = $_SESSION['name']; //this value is obtained from the login page when the
 
 checkSession($path); //calling the function from session.php
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,14 +29,14 @@ checkSession($path); //calling the function from session.php
 </head>
 
 <body>
-    <h1 class="pagefont"><u>Admin Reports</u></h1>
+    <h1 class="pagefont"><u>Staff Reports</u></h1>
 
     <nav class="box4">
-        <h2 class="documentfont">All Reports</h2>
+        <h2 class="documentfont">Monthly Reports</h2>
         <div class="column1">
             <ul>
-                <li><a class="sideBarfont" href="adminReports.php"><b>All Reports</b></a></li>
-                <li><a class="sideBarfont" href="adminMonthlyReports.php"><b>Monthly Reports</b></a></li>
+                <li><a class="sideBarfont" href="userReports.php"><b>All Reports</b></a></li>
+                <li><a class="sideBarfont" href="userMonthlyReports.php"><b>Monthly Reports</b></a></li>
         </div>
     </nav>
 </body>
