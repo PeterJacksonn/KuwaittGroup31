@@ -29,6 +29,9 @@
 						<li class="nav-item">
 							<a class="nav-link text-light" href="userDocument.php">View Documents</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link text-light" href="userReports.php">Monthly Report</a>
+						</li>
 					</ul>
 				</div>
 				<a class="nav-link text-light" href="logout.php">Logout</a>

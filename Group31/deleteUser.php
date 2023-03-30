@@ -1,11 +1,19 @@
 <?php
-require("adminNav.php");?>
+require("adminNav.php");
+include("getOS.php");?>
+
 
 
 <h1><u> Delete User Page </u></h1>
 
 <?php
-$db = new SQLite3('..\\Database\\Kuwaitt.db');
+$os = getOS();
+if($os === "Mac"){
+    $db = new SQLITE3('/Database/Kuwaitt.db');
+}
+else{
+    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+}
 $sql = "SELECT id, fname, lname, email, password, role FROM credentials WHERE id=:id";
 $stmt = $db->prepare($sql);
 $stmt->bindParam(':id', $_GET['id'], SQLITE3_TEXT); 
@@ -17,7 +25,13 @@ while($row=$result->fetchArray(SQLITE3_NUM)){ //uses php to use iteration to dis
 
 if (isset($_POST['delete'])){ //if statement which is entered into when the user clicks on delete
 
-    $db = new SQLite3('..\\Database\\Kuwaitt.db');
+    $os = getOS();
+    if($os === "Mac"){
+        $db = new SQLITE3('/Database/Kuwaitt.db');
+    }
+    else{
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
 
     $stmt = "DELETE FROM credentials WHERE id = :ids";//to make the code actually delete from db remove the
     $sql = $db->prepare($stmt);                    //s at the end of (id = :ids)
