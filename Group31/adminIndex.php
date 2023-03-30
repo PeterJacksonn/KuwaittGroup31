@@ -34,18 +34,19 @@ checkSession($path); //calling the function from session.php
 
     <nav class="box3">
         <h2 class="documentfont">My Documents</h2>
-        <div class="column1">
-            <ul>
-                <li><a class="sideBarfont" href="adminIndex.php"><b>My Documents</b></a></li>
-                <li><a class="sideBarfont" href="adminIndexAddDoc.php"><b>Scan / Upload File</b></a></li>
-                <li><a class="sideBarfont" href=""><b>Archived Files</b></a></li>
-                <li><a class="sideBarfont" href=""><b>Deleted Files</b></a></li>
-            </ul>
-        </div>
+
+        <ul>
+            <li><a class="sideBarfont" href=""><b>My Documents</b></a></li>
+            <li><a class="sideBarfont" href=""><b>Scan / Upload File</b></a></li>
+            <li><a class="sideBarfont" href=""><b>Archived Files</b></a></li>
+            <li><a class="sideBarfont" href=""><b>Deleted Files</b></a></li>
+        </ul>
     </nav>
 </body>
 
 </html>
+
+
 
 
 <?php require("footer.php"); ?>
