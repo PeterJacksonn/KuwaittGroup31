@@ -19,14 +19,14 @@ checkSession($path); //calling the function from session.php
 
 
 if(isset($_GET['uid'])){
-    appendViewed($name);
+    appendViewed();
 }
-function appendViewed($name){
+function appendViewed(){
     $db = new SQLite3('..\\Database\\Kuwaitt.db');
-    $sql = "UPDATE documents SET viewers= viewers|| :viewer WHERE docID=:docID";
+    $sql = "UPDATE documents SET viewers=viewers||:viewer WHERE docID=:docID";
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':viewer'," ".$name.": ".date("d/m/Y h:i:s").",\n", SQLITE3_TEXT);
-    $stmt->bindValue(':docID',$_GET['uid'], SQLITE3_TEXT);
+    $stmt->bindParam(':viewer',$_SESSION['name'], SQLITE3_TEXT);
+    $stmt->bindParam(':docID',$_GET['uid'], SQLITE3_TEXT);
     $stmt->execute();
     
   }

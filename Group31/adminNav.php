@@ -36,7 +36,7 @@
 							<a class="nav-link text-light" href="createbUser.php">Add New User</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link text-light" href="addDoc.php">Add Document</a>
+							<a class="nav-link text-light" href="adminReports.php">Monthly Report</a>
 						</li>
 					</ul>
 				</div>

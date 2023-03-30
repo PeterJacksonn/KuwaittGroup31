@@ -345,3 +345,33 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+thead.theadColour{
+    text-align: center;
+    background: #1ab05c;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    font-size: 20px;
+}
+
+td.tbContents{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    font-size: 17px;
+}
+
+table tr td, table tr th{
+    background-color: rgba(26, 176, 92, 0.05) !important;
+}
+
+.tableHeader {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 45px;
+    letter-spacing: 2px;
+    color: #128754;
+    top: 60px;
+    padding-left: 40px;
+}
