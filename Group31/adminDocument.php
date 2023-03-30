@@ -38,8 +38,6 @@ function getDocument()
 }
 
 $document = getDocument();
-
-
 ?>
 
 
@@ -59,12 +57,8 @@ $document = getDocument();
                         <td style="text-align: center;">Document ID</td>
                         <td style="text-align: center;">Document Owner</td>
                         <td style="text-align: center;">Criticality</td>
-                        <td style="text-align: center;">Document Viewer</td>
-                        <td style="text-align: center;"></td>
+                        <td style="text-align: center;">Recently Viewed</td>
                         <td style="text-align: center;">View</td>
-                        <td style="text-align: center;"></td>
-
-
                     </thead>
 
                     <?php
@@ -74,15 +68,32 @@ $document = getDocument();
                             <td class="tbContents"><?php echo $document[$i]['docID'] ?></td>
                             <td class="tbContents"><?php echo $document[$i]['owner'] ?></td>
                             <td class="tbContents"><?php echo $document[$i]['criticality'] ?></td>
-                            <td class="tbContents"><?php echo $document[$i]['viewers'] ?></td>
+                            <td class="tbContents"><button type="button" class="btn btn-action" data-bs-toggle="modal" data-bs-target="#viewersModal<?php echo $i ?>">View</button></td>
                             <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-                            <td class="tbContents"><a href="archiveDoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">Archive</a></td>
-                            <td class="tbContents"><a href="deleteDoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">Delete</a></td>
-
                         </tr>
                     <?php endfor; ?>
                 </table>
+            <!-- Modal -->
+            <?php
+                for ($i=0; $i<count($document); $i++):
+            ?>
+            <div class="modal fade" id="viewersModal<?php echo $i ?>" tabindex="-1" role="dialog" aria-labelledby="viewersModalLabel<?php echo $i ?>" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="viewersModalLabel<?php echo $i ?>">Viewers for Document <?php echo $document[$i]['docID']?></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><?php echo $document[$i]['viewers']?></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <?php endfor;?>
         </div>
     </main>
 </div>
