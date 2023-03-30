@@ -14,37 +14,6 @@ a {
     border-color: #1861ac;
 }
 
-
-.btn-action{
-    border-color: #48639C !important;
-    color: #48639C !important;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-    font-size: 17px;
-}
-
-.btn-action:hover{
-    color:#fff !important;
-    background-color:#48639C;
-    border-color:#48639C
-}
-
-.btn-negative{
-    border-color: #D5573B !important;
-    color: #D5573B !important;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-    font-size: 17px;
-}
-
-.btn-negative:hover{
-    color:#fff !important;
-    background-color:#D5573B;
-    border-color:#D5573B
-}
-
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
     color: #fff;
@@ -65,21 +34,22 @@ body {
 
 ul {
     list-style-type: none;
-    /*margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
     width: 200px;
 }
 
 li a {
-    padding: 10px 5px;
     display: block;
     color: #000000;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 
 li a:hover {
-    border-radius: 10px;
     background-color: #1ab05c;
     color: #ffffff;
+    border-radius: 10px;
 }
 
 .titlefont {
@@ -176,10 +146,9 @@ li a:hover {
     background: rgba(26, 176, 92, .5);
 }
 
+input[name="id"],
 input[name="password"],
-input[name="email"],
-input[name="fname"],
-input[name="lname"] {
+input[name="email"] {
     background: rgb(255, 255, 255);
     display: block;
     margin: 20px auto;
@@ -196,18 +165,16 @@ input[name="lname"] {
     border-radius: 15px;
 }
 
-input[name="email"]:focus,
-input[name="password"]:focus,
-input[name="fname"]:focus,
-input[name="lname"]:focus {
-    width: 150%;
-    height: 10%;
+input[type="text"]:focus,
+input[type="password"]:focus {
+    width: 510px;
+    height: 60px;
     border: 6px solid #128754;
     border-radius: 15px;
 }
 
 
-/*admin/user homepage*/
+/*admin homepage*/
 
 .pagefont {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -215,7 +182,7 @@ input[name="lname"]:focus {
     letter-spacing: 2px;
     white-space: nowrap;
     color: #128754;
-    position: static;
+    position: absolute;
     top: 7%;
     padding-left: 2%;
 }
@@ -227,7 +194,7 @@ input[name="lname"]:focus {
     white-space: nowrap;
     color: #1ab05c;
     position: absolute;
-    top: 14%;
+    top: 13%;
     padding-left: 2.5%;
 }
 
@@ -247,37 +214,6 @@ input[name="lname"]:focus {
 
 .box3 {
     height: 70%;
-    width: 80%;
-    border-radius: 10px;
-    padding: 10px;
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    background: rgba(26, 176, 92, .5);
-    outline: solid 5px #1ab05c;
-}
-
-.column1 {
-    float: left;
-    width: 15%;
-}
-
-.column2 {
-    float: right;
-    width: 100%;
-}
-
-.uploadPos {
-    top: 91%;
-    left: 93%;
-    position: absolute;
-}
-
-
-/*create user*/
-
-.box4 {
-    height: 74%;
     width: 80%;
     border-radius: 10px;
     padding: 10px;
@@ -412,34 +348,4 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
-}
-thead.theadColour{
-    text-align: center;
-    background: #1ab05c;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 2px;
-    white-space: nowrap;
-    font-size: 20px;
-}
-
-td.tbContents{
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-    font-size: 17px;
-}
-
-table tr td, table tr th{
-    background-color: rgba(26, 176, 92, 0.05) !important;
-}
-
-.tableHeader {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 45px;
-    letter-spacing: 2px;
-    color: #128754;
-    top: 60px;
-    padding-left: 40px;
 }

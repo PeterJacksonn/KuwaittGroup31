@@ -1,5 +1,7 @@
 <?php
+
 require('UserNav.php');
+
 include("session.php");
 
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
@@ -29,17 +31,16 @@ checkSession($path); //calling the function from session.php
 </head>
 
 <body>
-    <h1 class="pagefont"><u>User Home Page</u></h1>
+    <h1 class="pagefont"><u>User Landing Page</u></h1>
 
     <h2 class="greetingUser">Hello <?php echo $name ?></h2>
     <nav class="box3">
         <h2 class="documentfont">My Documents</h2>
-        <div class="column1">
-            <ul>
-                <li><a class="sideBarfont" href="userIndex.php"><b>My Documents</b></a></li>
-                <li><a class="sideBarfont" href="userIndexAddDoc.php"><b>Scan / Upload File</b></a></li>
-            </ul>
-        </div>
+
+        <ul>
+            <li><a class="sideBarfont" href=""><b>My Documents</b></a></li>
+            <li><a class="sideBarfont" href=""><b>Scan / Upload File</b></a></li>
+        </ul>
     </nav>
 </body>
 
