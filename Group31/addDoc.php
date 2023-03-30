@@ -2,7 +2,7 @@
 include_once("docSQL.php");
 include("session.php");
 
-$path = "Login.php"; //this path is to pass to checkSession function from session.php
+$path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
 
 session_start(); //must start a session in order to use session in this page.
 

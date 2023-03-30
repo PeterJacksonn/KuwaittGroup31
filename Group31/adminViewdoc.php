@@ -23,10 +23,10 @@ if(isset($_GET['uid'])){
 }
 function appendViewed(){
     $db = new SQLite3('..\\Database\\Kuwaitt.db');
-    $sql = "UPDATE documents SET viewers=viewers||:viewer WHERE docID=:docID";
+    $sql = "UPDATE documents SET viewers= viewers|| :viewer WHERE docID=:docID";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':viewer',$_SESSION['name'], SQLITE3_TEXT);
-    $stmt->bindParam(':docID',$_GET['uid'], SQLITE3_TEXT);
+    $stmt->bindValue(':docID',$_GET['uid'], SQLITE3_TEXT);
     $stmt->execute();
     
   }
