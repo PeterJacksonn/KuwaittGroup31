@@ -1,5 +1,4 @@
 <?php require("adminNav.php");
-include_once("viewDocSQL.php");
 include("session.php");
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
 
@@ -16,6 +15,21 @@ if (!isset($_SESSION['id'])) {
 $name = $_SESSION['name']; //this value is obtained from the login page when the user is verified
 
 checkSession($path); //calling the function from session.php
+
+function getDoc (){
+    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    $sql = "SELECT * FROM documents WHERE archive = 'yes'";
+
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':id', $_SESSION['id'] , SQLITE3_TEXT);
+    $result = $stmt->execute();
+    
+
+    while ($row = $result->fetchArray()){ // use fetchArray(SQLITE3_NUM) - another approach
+        $arrayResult [] = $row; //adding a record until end of records
+    }
+    return $arrayResult;
+}
 
 
 $document = getDoc();
@@ -37,7 +51,7 @@ $document = getDoc();
     <h2 class="greetingUser">Hello, <?php echo $name ?></h2>
 
     <nav class="box3">
-        <h2 class="documentfont">My Documents</h2>
+        <h2 class="documentfont">Archived Documents</h2>
         <div class="column1">
             <ul>
                 <li><a class="sideBarfont" href="adminIndex.php"><b>My Documents</b></a></li>
@@ -53,7 +67,6 @@ $document = getDoc();
                         <td style="text-align: center;">Document ID</td>
                         <td style="text-align: center;">Document Owner</td>
                         <td style="text-align: center;">Criticality</td>
-                        <td style="text-align: center;">Document Viewer</td>
                         <td style="text-align: center;">View</td>
                     </thead>
 
@@ -64,7 +77,6 @@ $document = getDoc();
                             <td class="tbContents"><?php echo $document[$i]['docID'] ?></td>
                             <td class="tbContents"><?php echo $document[$i]['owner'] ?></td>
                             <td class="tbContents"><?php echo $document[$i]['criticality'] ?></td>
-                            <td class="tbContents"><?php echo $document[$i]['viewers'] ?></td>
                             <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
                         </tr>
                     <?php endfor; ?>
