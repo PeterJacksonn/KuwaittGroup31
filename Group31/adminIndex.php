@@ -1,5 +1,4 @@
 <?php require("adminNav.php");
-include_once("viewDocSQL.php");
 include("session.php");
 $path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
 
@@ -16,9 +15,6 @@ if (!isset($_SESSION['id'])) {
 $name = $_SESSION['name']; //this value is obtained from the login page when the user is verified
 
 checkSession($path); //calling the function from session.php
-
-
-$document = getDoc();
 ?>
 
 <!DOCTYPE html>
@@ -42,34 +38,9 @@ $document = getDoc();
             <ul>
                 <li><a class="sideBarfont" href="adminIndex.php"><b>My Documents</b></a></li>
                 <li><a class="sideBarfont" href="adminIndexAddDoc.php"><b>Scan / Upload File</b></a></li>
-                <li><a class="sideBarfont" href="viewArchived.php"><b>Archived Files</b></a></li>
-                <li><a class="sideBarfont" href="viewDeleted.php"><b>Deleted Files</b></a></li>
+                <li><a class="sideBarfont" href=""><b>Archived Files</b></a></li>
+                <li><a class="sideBarfont" href=""><b>Deleted Files</b></a></li>
             </ul>
-        </div>
-        <div class="row">
-            <div class="col">
-                <table class="table table-hover">
-                    <thead class="theadColour">
-                        <td style="text-align: center;">Document ID</td>
-                        <td style="text-align: center;">Document Owner</td>
-                        <td style="text-align: center;">Criticality</td>
-                        <td style="text-align: center;">Document Viewer</td>
-                        <td style="text-align: center;">View</td>
-                    </thead>
-
-                    <?php
-                    for ($i = 0; $i < count($document); $i++) :
-                    ?>
-                        <tr>
-                            <td class="tbContents"><?php echo $document[$i]['docID'] ?></td>
-                            <td class="tbContents"><?php echo $document[$i]['owner'] ?></td>
-                            <td class="tbContents"><?php echo $document[$i]['criticality'] ?></td>
-                            <td class="tbContents"><?php echo $document[$i]['viewers'] ?></td>
-                            <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-                        </tr>
-                    <?php endfor; ?>
-                </table>
-            </div>
         </div>
     </nav>
 </body>
