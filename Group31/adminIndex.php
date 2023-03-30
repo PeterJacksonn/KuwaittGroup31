@@ -1,57 +1,51 @@
 <?php require("adminNav.php");
+include_once("viewDocSQL.php");
 include("session.php");
+$path = "adminLogin.php"; //this path is to pass to checkSession function from session.php
 
-include("getOS.php");
-
-
-$path = "adminLogin.php";
 session_start(); //must start a session in order to use session in this page.
+
 if (!isset($_SESSION['id'])) {
 
     session_unset();
     session_destroy();
     header("Location:" . $path); //return to the login page
+
 }
-$fname = $_SESSION['name'];
-$lname = $_SESSION['lname'];
-$name = $fname . ' ' . $lname; //this value is obtained from the login page when the user is verified
+
+$name = $_SESSION['name']; //this value is obtained from the login page when the user is verified
 
 checkSession($path); //calling the function from session.php
 
-function getDocument()
-{
-    $os = getOS();
-    if ($os === "Mac") {
-        $db = new SQLITE3('../Database/Kuwaitt.db');
-    } else {
-        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
-    }
-    $sql = "SELECT * FROM documents";
-    $stmt = $db->prepare($sql);
-    $result = $stmt->execute();
 
-
-    while ($row = $result->fetchArray()) { // use fetchArray(SQLITE3_NUM) - another approach
-        $arrayResult[] = $row; //adding a record until end of records
-    }
-    return $arrayResult;
-}
-
-$document = getDocument();
-
-
+$document = getDoc();
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
-    <h1 class="tableHeader"><u>View Documents</u></h1>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-<div class="container bgColor">
-    <main role="main" class="pb-3">
-        <h5>View all information about each document, or select a document to view.</h5>
+<body>
+    <h1 class="pagefont"><u>Admin Home Page</u></h1>
 
+    <h2 class="greetingUser">Hello, <?php echo $name ?></h2>
 
+    <nav class="box3">
+        <h2 class="documentfont">My Documents</h2>
+        <div class="column1">
+            <ul>
+                <li><a class="sideBarfont" href="adminIndex.php"><b>My Documents</b></a></li>
+                <li><a class="sideBarfont" href="adminIndexAddDoc.php"><b>Scan / Upload File</b></a></li>
+                <li><a class="sideBarfont" href="viewArchived.php"><b>Archived Files</b></a></li>
+                <li><a class="sideBarfont" href="viewDeleted.php"><b>Deleted Files</b></a></li>
+            </ul>
+        </div>
         <div class="row">
             <div class="col">
                 <table class="table table-hover">
@@ -60,11 +54,7 @@ $document = getDocument();
                         <td style="text-align: center;">Document Owner</td>
                         <td style="text-align: center;">Criticality</td>
                         <td style="text-align: center;">Document Viewer</td>
-                        <td style="text-align: center;"></td>
                         <td style="text-align: center;">View</td>
-                        <td style="text-align: center;"></td>
-
-
                     </thead>
 
                     <?php
@@ -76,17 +66,15 @@ $document = getDocument();
                             <td class="tbContents"><?php echo $document[$i]['criticality'] ?></td>
                             <td class="tbContents"><?php echo $document[$i]['viewers'] ?></td>
                             <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-                            <td class="tbContents"><a href="archiveDoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">Archive</a></td>
-                            <td class="tbContents"><a href="deleteDoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">Delete</a></td>
-
                         </tr>
                     <?php endfor; ?>
                 </table>
             </div>
         </div>
-    </main>
-</div>
+    </nav>
+</body>
+
+</html>
 
 
-
-<?php require("Footer.php"); ?>
+<?php require("footer.php"); ?>
