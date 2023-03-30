@@ -1,5 +1,13 @@
 <?php require("adminNav.php");
-$db = new SQLite3('..\\Database\\Kuwaitt.db');
+include("getOS.php");
+$os = getOS();
+if($os === "Mac")
+{
+    $db = new SQLITE3('../Database/Kuwaitt.db');
+}
+else{
+    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+}
 $sql = "SELECT * FROM documents WHERE docID=:uid";
 $stmt = $db->prepare($sql);
 $stmt->bindParam(':uid', $_GET['uid'], SQLITE3_TEXT);
@@ -8,7 +16,14 @@ $result= $stmt->execute();
     
 if (isset($_POST['submit'])){
 
-    $db = new SQLite3('..\\Database\\Kuwaitt.db');
+    $os = getOS();
+    if($os === "Mac")
+    {
+      $db = new SQLITE3('../Database/Kuwaitt.db');
+    }
+    else{
+      $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
     $sql = "UPDATE documents SET archive = 'yes' WHERE docID = :uid";
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':uid',$_GET['uid'], SQLITE3_TEXT); //discuss this!
