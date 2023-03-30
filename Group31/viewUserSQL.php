@@ -1,7 +1,14 @@
 <?php
+include("getOS.php");
 
 function getUsers (){
-    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    $os = getOS();
+    if($os === "Mac"){
+        $db = new SQLITE3('../Database/Kuwaitt.db');
+    }
+    else{
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
     $sql = "SELECT * FROM credentials";
     $stmt = $db->prepare($sql);
     $result = $stmt->execute();
@@ -14,8 +21,13 @@ function getUsers (){
 }
 
 function UpdateDb($table,$column,$value,$pk,$pkvalue){
-
-    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    $os = getOS();
+    if($os === "Mac"){
+        $db = new SQLITE3('../Database/Kuwaitt.db');
+    }
+    else{
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
     $sql = 'UPDATE '.$table.' SET '.$column.' = :value WHERE '.$pk.' = :pkvalue';
     $stmt = $db->prepare($sql);
 
@@ -27,9 +39,18 @@ function UpdateDb($table,$column,$value,$pk,$pkvalue){
 
 }
 
-function TableNames($table,$index){
 
-    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+function TableNames($table,$index){ // returns the column name of the given index
+
+
+    $os = getOS();
+    if($os === "Mac"){
+        $db = new SQLITE3('../Database/Kuwaitt.db');
+    }
+    else{
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
+
     $sql = "SELECT * FROM ".$table;
     $stmt = $db->prepare($sql);
     
@@ -40,13 +61,41 @@ function TableNames($table,$index){
 
 }
 
-function TableColumns($table){
+function TableColumns($table){   // returns the number of columns in the table with the name 'string $table'
 
-    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    $os = getOS();
+    if($os === "Mac"){
+        $db = new SQLITE3('../Database/Kuwaitt.db');
+    }
+    else{
+        $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    }
     $sql = "SELECT * FROM ".$table;
     $stmt = $db->prepare($sql);
     
     $result = $stmt->execute();
 
     return $result->numColumns();
+}
+
+
+function InsertData($table,$data){ // inserts data into the given table: InsertData(string $table, array $data)
+    //echo var_dump($data);
+    $values = "";
+    for($i=0;$i<count($data);$i++){
+        $values = $values.'"'.$data[$i].'"';
+        if($i != (count($data)-1)){
+            $values = $values.",";
+        }
+    }
+    $values = "VALUES(".$values.")";
+
+    $db = new SQLITE3('..\\Database\\Kuwaitt.db');
+    $sql = "INSERT INTO ".$table." ".$values;
+    $stmt = $db->prepare($sql);
+    //echo $sql;
+    $result = $stmt->execute();
+
+    return $result;
+
 }

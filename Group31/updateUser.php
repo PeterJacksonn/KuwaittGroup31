@@ -1,7 +1,7 @@
 <?php
 require("adminNav.php");
 require("viewUserSQL.php");
-$pkvalue = $_GET['id'];
+$pkvalue = $_GET['uid'];
 $tableName = 'credentials';
 $pk = 'id';
 $error = "";
@@ -16,13 +16,14 @@ if(isset($_POST['submit'])){
     //$debugerror =  "debug1 ";
     if(isset($_POST['update'])){
         //$debugerror = "debug2 ";
+
         $success = UpdateDb($tableName,$_POST['column'],$_POST['update'],TableNames($tableName,0),$pkvalue);
         if($success == false){
             $error = "sql statement failed to execute";
         }
         else{
             //echo "sql statement successful?? if nothing changed f"; // debug: used this cos the statement was successful but nothing changed
-            $path = "updateUser.php?uid=".$pkvalue;
+            $path = "updateUser.php?id=".$pkvalue;
             header("Location:".$path);
         }
     }
@@ -33,16 +34,19 @@ if(isset($_POST['submit'])){
 
 ?>
 
-<h1><u>Update user for ID: <?php echo $pkvalue; ?></u></h1>
 
+<div>
+  <h1 class="tableHeader"><u>Update user page:  ID <?php echo $pkvalue; ?></u></h1>
+</div>
 
-
+<div class="container bgColor">
+    <main role="main" class="pb-3">
         <div class="row">
-            <div class="col-12">
-                <table class="table table-striped">
-                    <thead class="table-dark">
+            <div class="col">
+                <table class="table table-hover">
+                    <thead class="theadColour">
                         <?php for($i=0;$i<$noOfColumns;$i++):?>
-                        <td><?php $$i = TableNames($tableName,$i); echo $$i;?></td>
+                        <td style="text-align: center;"><?php $$i = TableNames($tableName,$i); echo $$i;?></td>
                         <?php endfor;?>
                     </thead>
 
@@ -52,7 +56,7 @@ if(isset($_POST['submit'])){
                     ?>
                     <tr>
                         <?php for($j=0;$j<$noOfColumns;$j++):?>
-                        <td><?php echo $table[$i][$j]?></td>
+                        <td class="tbContents"><?php echo $table[$i][$j]?></td>
 
                         <?php endfor;?>
 
@@ -61,31 +65,31 @@ if(isset($_POST['submit'])){
 
                     <?php endif;endfor;?>
                 </table>    
+                <div>
+                    <form method="post">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="column">Update</label>
+                            </div>
+                            <select class="custom-select" id="column" name="column">
+                                <?php for($i=0;$i<$noOfColumns;$i++):?>
+                                    <option value = "<?php echo $$i ?>"><?php echo $$i; ?></option>
+                                <?php endfor;?>
+                            </select>
+                            <input type="text" class="form-control" name="update">
+                            <div class="input-group-append">
+                                <button class="btn btn-action" type="button" name="submit">Submit</button>
+                            </div>
+                            <input type="hidden" name = "uid" value = "<?php echo $pkvalue ?>"></input>
+                            <span class="text-danger"><?php echo $error; ?></span>
+                        </div>
+                    <form>
+                </div>
             </div>
         </div>
+    </main>
 
-        <div>
-        <form method="post">
-            <div>
-                <select name="column">
-                    <?php for($i=0;$i<$noOfColumns;$i++):?>
-                    <option value = "<?php echo $$i ?>"><?php echo $$i; ?></option>
-                    <?php endfor;?>
-                </select>
-            </div>
-            <div>
-                <input type="text" name="update"></input>
-            </div>
-            <div>
-                <input type="submit" name="submit"></input>
-            </div>
-            <input type="hidden" name = "uid" value = "<?php echo $pkvalue ?>"></input>
-            <span class="text-danger"><?php echo $error; ?></span>
-        <form>
-        </div>
-
-        
-
+</div>
 
 
 <?php require("footer.php"); ?>
