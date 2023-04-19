@@ -1,6 +1,6 @@
 <?php require("UserNav.php");
 include("getOS.php");
-session_start();
+
 
 
 function getDocument()
@@ -56,7 +56,8 @@ $document = getDocument();
               <td class="tbContents"><?php echo $document[$i]['criticality'] ?></td>
               <td class="tbContents"><?php echo $document[$i]['viewers'] ?></td>
 
-              <?php if ($document[$i]['criticality'] == 'low'):?>
+              <?php session_start();
+              if ($document[$i]['criticality'] == 'low'):?>
                 <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
               <?php endif;
               if (($document[$i]['criticality'] == 'medium') && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'manager')):?>
@@ -65,7 +66,7 @@ $document = getDocument();
               if (($document[$i]['criticality'] == 'high') && ($_SESSION['role'] == 'manager')):?>
                 <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
               <?php endif; ?>
-              
+
             </tr>
           <?php endfor; ?>
         </table>
