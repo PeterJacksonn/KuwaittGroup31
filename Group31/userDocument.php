@@ -60,10 +60,10 @@ $document = getDocument();
                 if ($document[$i]['criticality'] == 'low'): ?>
                   <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
                 <?php endif;
-                elseif ($document[$i]['criticality'] == 'medium'): ?>
+                if ($document[$i]['criticality'] == 'medium'): ?>
                   <td class="tbContents"> NO </td>
                 <?php endif;
-                elseif ($document[$i]['criticality'] == 'high'): ?>
+                if ($document[$i]['criticality'] == 'high'): ?>
                   <td class="tbContents"> NO </td>
                 <?php endif;
               endif;
