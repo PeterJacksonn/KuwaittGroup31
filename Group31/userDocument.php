@@ -65,10 +65,7 @@ $document = getDocument();
               <?php endif;
               elseif (($document[$i]['criticality'] == 'high') && ($_SESSION['role'] == 'manager')):?>
                 <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-              <?php endif; 
-              else{ ?>
-              <td class="tbContents"></td>
-              <?php } ?>
+              <?php endif; ?>
 
             </tr>
           <?php endfor; ?>
