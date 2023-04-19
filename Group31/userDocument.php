@@ -58,12 +58,12 @@ $document = getDocument();
               if ($document[$i]['criticality'] == 'low'):?>
                 <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
               <?php endif;
-              elseif ((($document[$i]['criticality'] == 'medium') && ($_SESSION['role'] == 'admin' )) || (($document[$i]['criticality'] == 'medium') && ($_SESSION['role'] == 'manager' ))):?>
+              elseif ((($document[$i]['criticality'] == 'medium') && ($_SESSION['role'] == 'admin' )) || (($document[$i]['criticality'] == 'medium') && ($_SESSION['role'] == 'manager' ))) {?>
                 <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-              <?php endif;
-              elseif (($document[$i]['criticality'] == 'high') && ($_SESSION['role'] == 'manager')):?>
+              <?php }
+              elseif (($document[$i]['criticality'] == 'high') && ($_SESSION['role'] == 'manager')){ ?>
                 <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-              <?php endif; ?>
+              <?php } ?>
             </tr>
           <?php endfor; ?>
         </table>
