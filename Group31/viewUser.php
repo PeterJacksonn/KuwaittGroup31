@@ -2,6 +2,7 @@
 require("adminNav.php");
 include_once("viewUserSQL.php");
 
+
 $user = getUsers();
 ?>
   <?php if(isset($_GET['deleted'])): ?>

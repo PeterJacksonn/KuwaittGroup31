@@ -31,7 +31,7 @@ checkSession($path); //calling the function from session.php
 <body>
     <h1 class="pagefont"><u>User Home Page</u></h1>
 
-    <h2 class="greetingUser">Hello <?php echo $name  echo $_SESSION['role'];?></h2>
+    <h2 class="greetingUser">Hello <?php echo $name; ?></h2>
     <nav class="box3">
         <h2 class="documentfont">My Documents</h2>
         <div class="column1">
