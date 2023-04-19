@@ -4,6 +4,7 @@ include("getOS.php");
 
 function getDocument()
 {
+  session_start();
   $os = getOS();
   if ($os === "Mac") {
     $db = new SQLITE3('../Database/Kuwaitt.db');
@@ -55,15 +56,41 @@ $document = getDocument();
               <td class="tbContents"><?php echo $document[$i]['criticality'] ?></td>
               <td class="tbContents"><?php echo $document[$i]['viewers'] ?></td>
               <?php session_start();
-              if ($document[$i]['criticality'] == 'low'):?>
-                <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-              <?php endif;
-              elseif ((($document[$i]['criticality'] == 'medium') && ($_SESSION['role'] == 'admin' )) || (($document[$i]['criticality'] == 'medium') && ($_SESSION['role'] == 'manager' ))):?>
-                <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-              <?php endif;
-              elseif (($document[$i]['criticality'] == 'high') && ($_SESSION['role'] == 'manager')):?>
-                <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
-              <?php endif; ?>
+
+              if ($_SESSION['role'] == 'staff' ) {
+                if ($document[$i]['criticality'] == 'low'){ ?>
+                  <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
+                <?php }
+                if ($document[$i]['criticality'] == 'medium'){ ?>
+                  <td class="tbContents"> NO </td>
+                <?php }
+                if ($document[$i]['criticality'] == 'high'){ ?>
+                  <td class="tbContents"> NO </td>
+                <?php }
+              }
+              if ($_SESSION['role'] == 'manager' ) {
+                if ($document[$i]['criticality'] == 'low'){ ?>
+                  <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
+                <?php }
+                if ($document[$i]['criticality'] == 'medium'){ ?>
+                  <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
+                <?php }
+                if ($document[$i]['criticality'] == 'high'){ ?>
+                  <td class="tbContents"> </td>
+                <?php }
+              }
+              if ($_SESSION['role'] == 'admin' ) {
+                if ($document[$i]['criticality'] == 'low'){ ?>
+                  <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
+                <?php }
+                if ($document[$i]['criticality'] == 'medium'){ ?>
+                  <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
+                <?php }
+                if ($document[$i]['criticality'] == 'high'){  ?>
+                  <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
+                <?php }
+              }?>
+
             </tr>
           <?php endfor; ?>
         </table>
