@@ -68,7 +68,7 @@ $document = getDocument();
                   <td class="tbContents"> NO </td>
                 <?php }
               }
-              if ($_SESSION['role'] == 'manager' ){
+              if ($_SESSION['role'] == 'manager' ) {
                 if ($document[$i]['criticality'] == 'low'){ ?>
                   <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
                 <?php }
@@ -79,7 +79,7 @@ $document = getDocument();
                   <td class="tbContents"> </td>
                 <?php }
               }
-              if ($_SESSION['role'] == 'admin' ){
+              if ($_SESSION['role'] == 'admin' ) {
                 if ($document[$i]['criticality'] == 'low'){ ?>
                   <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
                 <?php }
