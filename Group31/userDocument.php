@@ -4,6 +4,7 @@ include("getOS.php");
 
 function getDocument()
 {
+  session_start();
   $os = getOS();
   if ($os === "Mac") {
     $db = new SQLITE3('../Database/Kuwaitt.db');
