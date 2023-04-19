@@ -54,7 +54,7 @@ $document = getDocument();
               <td class="tbContents"><?php echo $document[$i]['owner'] ?></td>
               <td class="tbContents"><?php echo $document[$i]['criticality'] ?></td>
               <td class="tbContents"><?php echo $document[$i]['viewers'] ?></td>
-              <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
+              <td class="tbContents"><a href="userViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
             </tr>
           <?php endfor; ?>
         </table>
