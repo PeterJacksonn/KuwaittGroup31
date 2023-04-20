@@ -59,6 +59,9 @@ $document = getDocument();
                         <td style="text-align: center;">Criticality</td>
                         <td style="text-align: center;">Recently Viewed</td>
                         <td style="text-align: center;">View</td>
+                        <td style="text-align: center;">Actions</td>
+                        <td></td>
+
                     </thead>
 
                     <?php
@@ -70,6 +73,10 @@ $document = getDocument();
                             <td class="tbContents"><?php echo $document[$i]['criticality'] ?></td>
                             <td class="tbContents"><button type="button" class="btn btn-action" data-bs-toggle="modal" data-bs-target="#viewersModal<?php echo $i ?>">View</button></td>
                             <td class="tbContents"><a href="adminViewdoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">View</a></td>
+                            <td class="tbContents"><a href="archiveDoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">Archive</a></td>
+                            <td class="tbContents"><a href="deleteDoc.php?uid=<?php echo $document[$i]['docID']; ?>" class="btn btn-action">Deleted</a></td>
+
+
                         </tr>
                     <?php endfor; ?>
                 </table>

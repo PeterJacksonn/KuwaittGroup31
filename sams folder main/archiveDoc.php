@@ -1,4 +1,4 @@
-<?php require("adminNav.php");
+<?php require("managerNav.php");
 $db = new SQLite3('..\\Database\\Kuwaitt.db');
 $sql = "SELECT * FROM documents WHERE docID=:uid";
 $stmt = $db->prepare($sql);
@@ -16,7 +16,7 @@ if (isset($_POST['submit'])){
 
     $stmt->execute();
 
-    header('Location: adminDocument.php');
+    header('Location: managerIndex.php');
 }
 
 while($row=$result->fetchArray(SQLITE3_NUM)){
